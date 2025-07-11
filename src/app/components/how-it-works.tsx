@@ -6,7 +6,7 @@ const steps = [
   {
     icon: Download,
     title: "Download & Setup",
-    description: "Get the app from apple app store or google play store and create your family profile in minutes.",
+    description: "Get the app from apple app store or google play storeand create your family profile in minutes.",
     image: "/images/onboarding.png",
   },
   {
@@ -60,7 +60,7 @@ export default function HowItWorks() {
               </div>
 
               {/* Content Card */}
-              <Card className="border-0 shadow-lg rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 min-h-[160px] flex">
+              <Card className="bg-white border-0 shadow-lg rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 min-h-[160px] flex">
                 <CardContent className="p-6 flex flex-col justify-center w-full">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <step.icon className="w-6 h-6 text-white" />

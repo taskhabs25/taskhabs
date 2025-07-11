@@ -103,7 +103,7 @@ export default function Testimonials() {
 
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-hidden"
+          className="flex gap-6 overflow-x-hidden pb-6"
           style={{ width: "100%" }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
