@@ -1,9 +1,7 @@
 import type { Metadata } from "next"
 import { Card, CardContent } from "@/app/components/ui/card"
-import { Button } from "@/app/components/ui/button"
-import { Input } from "@/app/components/ui/input"
-import { Textarea } from "@/app/components/ui/text-area"
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react"
+
+import { Mail, Phone, MapPin } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contact Us - TASK HABS",

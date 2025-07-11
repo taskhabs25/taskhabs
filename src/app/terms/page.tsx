@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Card, CardContent } from "@/app/components/ui/card"
-import { Shield, FileText, Users, Lock, Eye, Scale, Star } from "lucide-react"
+import { Shield, FileText, Users, Lock, Eye, Scale } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Terms of Service - TASK HABS",

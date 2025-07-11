@@ -1,7 +1,6 @@
 import Image from "next/image"
-import { Button } from "@/app/components/ui/button"
 import Link from "next/link"
-import { Smartphone, Star } from "lucide-react"
+import { Star } from "lucide-react"
 import {Logo} from "@/app/components/logo"
 
 export default function DownloadCTA() {

@@ -1,6 +1,5 @@
 import Image from "next/image"
-import { Button } from "@/app/components/ui/button"
-import { Star, Smartphone } from "lucide-react"
+import { Star } from "lucide-react"
 import Link from "next/link"
 import {Logo} from "@/app/components/logo"
 

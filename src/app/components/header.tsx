@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Star } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
 import {Logo} from "@/app/components/logo"
 

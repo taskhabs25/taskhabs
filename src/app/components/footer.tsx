@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Star, Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 import {Logo} from "@/app/components/logo"
 
 export default function Footer() {
