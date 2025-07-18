@@ -284,19 +284,40 @@ export default function HeroV2() {
         </div>
 
         {/* Store CTA (repeat at bottom of hero) */}
-        <div id="cta" className="mt-20 flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild className="secondary-btn-lg">
-            <a href={APP_STORE_URL}>
-              <Smartphone className="w-5 h-5 mr-2" />
-              App Store
-            </a>
-          </Button>
-          <Button asChild className="secondary-btn-lg">
-            <a href={PLAY_STORE_URL}>
-              <Smartphone className="w-5 h-5 mr-2" />
-              Google Play
-            </a>
-          </Button>
+        <div
+          id="cta"
+          className="mt-20 flex flex-col sm:flex-row justify-center items-center gap-4">
+          {/* App Store Badge */}
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <Image
+              src="/images/apple_logo_white.svg"
+              alt="Download on the App Store"
+              width={200}   // adjust to match Apple’s official ratio
+              height={70}
+              className="hover:opacity-90 transition-opacity"
+            />
+          </a>
+
+          {/* Play Store Badge */}
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <Image
+              src="/images/playstore_logo.png"
+              alt="Get it on Google Play"
+              width={200}   // adjust as needed
+              height={70}
+              className="hover:opacity-90 transition-opacity"
+            />
+          </a>
         </div>
       </div>
     </section>

@@ -45,39 +45,41 @@ export default function DownloadCTA() {
             </div>
 
             {/* Store Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              {/* App Store Button - Blue */}
-              <Link
-                href={APP_STORE_URL}
-                className="flex items-center bg-[hsl(var(--brand-pro))] hover:bg-[hsl(var(--brand-pro))/0.9] text-white rounded-2xl px-6 py-3 shadow-lg transition-all duration-200 min-h-[60px]"
-              >
-                <img
-                  src="/images/appstore-logo.png"
-                  alt="App Store"
-                  width={44}
-                  height={44}
-                  className="mr-4 h-11 w-auto"
-                  style={{ objectFit: "contain" }}
-                />
-                <span className="text-lg font-semibold">Download on App Store</span>
-              </Link>
-
-              {/* Play Store Button - Dark */}
-              <Link
-                href={PLAY_STORE_URL}
-                className="flex items-center bg-black hover:bg-gray-800 text-white rounded-2xl px-6 py-3 shadow-lg transition-all duration-200 min-h-[60px]"
-              >
-                <img
-                  src="/images/playstore-logo.png"
-                  alt="Google Play"
-                  width={44}
-                  height={44}
-                  className="mr-4 h-11 w-auto"
-                  style={{ objectFit: "contain" }}
-                />
-                <span className="text-lg font-semibold">Get it on Google Play</span>
-              </Link>
-            </div>
+            <div
+                      id="cta"
+                      className="mt-20 flex flex-col sm:flex-row justify-center items-center gap-4 lg:justify-start lg:items-start">
+                      {/* App Store Badge */}
+                      <a
+                        href={APP_STORE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Image
+                          src="/images/apple_logo_white.svg"
+                          alt="Download on the App Store"
+                          width={200}   // adjust to match Apple’s official ratio
+                          height={70}
+                          className="hover:opacity-90 transition-opacity"
+                        />
+                      </a>
+            
+                      {/* Play Store Badge */}
+                      <a
+                        href={PLAY_STORE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Image
+                          src="/images/playstore_logo.png"
+                          alt="Get it on Google Play"
+                          width={200}   // adjust as needed
+                          height={70}
+                          className="hover:opacity-90 transition-opacity"
+                        />
+                      </a>
+                    </div>
           </div>
 
           {/* App Screenshots */}
