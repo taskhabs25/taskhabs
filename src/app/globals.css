@@ -1,5 +1,9 @@
+/* v2 - globals.css */
 @import "tailwindcss";
 
+/* -------------------------------------------------
+   Base Variables & Resets
+   ------------------------------------------------- */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -22,6 +26,11 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 214 100% 50%;
     --radius: 0.75rem;
+
+    /* --- TaskHabs Brand Tokens --- */
+    --brand-pro: 214 100% 50%;      /* professional blue (matches --primary) */
+    --brand-playful: 32 100% 50%;   /* owl orange */
+    --brand-neutral: 222.2 84% 4.9%;
   }
 
   .dark {
@@ -45,12 +54,11 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 94.1%;
   }
-}
 
-@layer base {
-  * {
-    border-color: hsl(var(--border));
-  }
+  html { scroll-behavior: smooth; }
+
+  * { border-color: hsl(var(--border)); }
+
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
@@ -58,38 +66,583 @@
   }
 }
 
-/* Custom styles for TASK HABS */
-.gradient-text {
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* -------------------------------------------------
+   Hero Gradient Background
+   ------------------------------------------------- */
+.hero-gradient {
+  background: radial-gradient(
+    ellipse at top,
+    #000000 0%,
+    #0a0a0a 25%,
+    #1a1a2e 50%,
+    #16213e 75%,
+    #0f3460 100%
+  );
 }
 
-.phone-mockup {
-  background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+/* -------------------------------------------------
+   Modern Gradient Mesh Background
+   ------------------------------------------------- */
+.gradient-mesh-bg {
+  background: linear-gradient(
+    135deg,
+    #0c0c0c 0%,
+    #1a1a1a 25%,
+    #2d2d2d 50%,
+    #1e1e3f 75%,
+    #2563eb 100%
+  );
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
-.floating-element {
-  animation: float 3s ease-in-out infinite;
+.gradient-mesh-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.3) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 25% 75%, rgba(236, 72, 153, 0.2) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 1;
+  animation: meshMove 20s ease-in-out infinite;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+@keyframes meshMove {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(2deg); }
 }
 
-.card-hover {
+/* -------------------------------------------------
+   Floating Orbs Animation
+   ------------------------------------------------- */
+.floating-orbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: orbFloat 15s infinite ease-in-out;
+}
+
+.orb-1 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.1) 70%, transparent 100%);
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0.1) 70%, transparent 100%);
+  top: 60%;
+  right: 15%;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, rgba(16, 185, 129, 0.1) 70%, transparent 100%);
+  bottom: 30%;
+  left: 20%;
+  animation-delay: -10s;
+}
+
+.orb-4 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, rgba(236, 72, 153, 0.1) 70%, transparent 100%);
+  top: 40%;
+  right: 30%;
+  animation-delay: -7s;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+  25% { transform: translateY(-30px) translateX(20px) scale(1.1); }
+  50% { transform: translateY(-60px) translateX(-20px) scale(0.9); }
+  75% { transform: translateY(-20px) translateX(30px) scale(1.05); }
+}
+
+/* -------------------------------------------------
+   Modern Card Styles
+   ------------------------------------------------- */
+.hero-card {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-pill {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
 
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.feature-pill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------
+   Text Styles
+   ------------------------------------------------- */
+.hero-title {
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  color: #e2e8f0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-description {
+  color: #cbd5e1;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------------------------
+   Button Styles
+   ------------------------------------------------- */
+.primary-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s ease;
+}
+.primary-btn:hover {
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6);
+  transform: translateY(-3px);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------
+   Phone Mockup Styles
+   ------------------------------------------------- */
+.phone-container {
+  perspective: 1000px;
+  animation: phoneFloat 6s ease-in-out infinite;
+}
+@keyframes phoneFloat {
+  0%, 100% { transform: translateY(0px) rotateY(0deg); }
+  50% { transform: translateY(-20px) rotateY(5deg); }
+}
+
+.phone-mockup {
+  background: linear-gradient(145deg, #1f2937 0%, #374151 100%);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* -------------------------------------------------
+   Stats Counter Animation
+   ------------------------------------------------- */
+.stats-counter {
+  animation: countUp 2s ease-out;
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------------
+   Glow Effects
+   ------------------------------------------------- */
+.glow-effect { position: relative; }
+.glow-effect::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #10b981);
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.7;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* =========================================================
+   TaskHabs Custom Components & Utilities
+   (no arbitrary values in @apply to keep Tailwind happy)
+   ========================================================= */
+@layer components {
+
+  /* Sticky translucent header */
+  .header-surface {
+    background-color: rgba(15, 52, 96, 0.85);
+    background-image: linear-gradient(
+      to bottom,
+      rgba(15, 52, 96, 0.9),
+      rgba(26, 33, 62, 0.85)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.05),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  .bg-header-surface { background-color: rgba(15, 52, 96, 0.95); }
+
+  /* Header links */
+  .header-nav-link {
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500;
+    color: rgba(255,255,255,.9);
+    transition: color .15s;
+  }
+  .header-nav-link:hover { color: #fff; }
+
+  .header-nav-link-mobile {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color .15s;
+  }
+  .header-nav-link-mobile:hover {
+    color: hsl(var(--brand-playful));
+  }
+
+  /* Header download button */
+  .header-download-btn {
+    background-color: hsl(var(--brand-playful));
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.1);
+  }
+  .header-download-btn:hover {
+    background-color: hsl(var(--brand-playful));
+    filter: brightness(1.05);
+  }
+
+  .header-download-btn-playful {
+    background-color: hsl(var(--brand-pro));
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.1);
+  }
+  .header-download-btn-playful:hover {
+    background-color: hsl(var(--brand-pro));
+    filter: brightness(1.05);
+  }
+
+  /* Large CTA buttons used in Hero */
+  .primary-btn-lg {
+    background-color: hsl(var(--brand-pro));
+    color: #fff;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    line-height: 1.25;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.1);
+    transition: filter .15s;
+  }
+  .primary-btn-lg:hover { filter: brightness(1.05); }
+
+  .secondary-btn-lg {
+    background-color: rgba(255,255,255,.1);
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    line-height: 1.25;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.1);
+    transition: background-color .15s, filter .15s;
+  }
+  .secondary-btn-lg:hover {
+    background-color: rgba(255,255,255,.2);
+    filter: brightness(1.05);
+  }
+
+  /* Dual Messaging Pills */
+  .pill-parent,
+  .pill-kid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    color: rgba(255,255,255,.9);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    font-size: 0.875rem;
+    line-height: 1;
+  }
+  .pill-parent { background-color: rgba(37,99,235,.2); } /* approx brand-pro blue */
+  .pill-kid { background-color: rgba(255,140,0,.2); }   /* approx playful orange */
+
+  /* Screenshot toggle tabs */
+  .screenshot-tab {
+    position: relative;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255,255,255,.7);
+    transition: background-color .15s, color .15s;
+
+
+  }
+  @media (min-width: 640px) {
+    .screenshot-tab { padding: 0.5rem 1.5rem; font-size: 0.875rem; }
+  }
+  .screenshot-tab.is-active {
+    background-color: #fff;
+    color: #111827;
+  }
+
+  /* Framed screenshot */
+  .phone-frame {
+    position: relative;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,.4);
+    /* outline: 4px solid rgba(255,255,255,.2); */
+  }
+  .phone-frame img { display: block; }
+  .screenshot-caption {
+    margin-top: 0.75rem;
+    display: block;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,.8);
+  }
+
+  /* Hero Stats Reveal */
+  .hero-stat {
+    opacity: 0;
+    transform: translateY(0.5rem);
+    transition: opacity .5s, transform .5s;
+  }
+  .hero-stat.stat-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hero-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  @media (min-width: 640px) {
+    .hero-stat-value { font-size: 1.875rem; }
+  }
+  .hero-stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,.7);
+  }
+
+  /* Owl bob animation utility */
+  .animate-owl-bob {
+    animation: owlBob 2.5s ease-in-out infinite;
+  }
+
+
+  .section-dark-bg {
+    position: relative;
+    /* reuse hero gradient palette for consistency */
+    background: radial-gradient(
+      ellipse at top,
+      #000000 0%,
+      #0a0a0a 25%,
+      #1a1a2e 55%,
+      #16213e 75%,
+      #0f3460 100%
+    );
+  }
+  .section-dark-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* subtle vertical fade to deepen lower part of the section */
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.6) 60%,
+      rgba(0,0,0,0.9) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* Utility shadow used above (non-@apply version kept for reference) */
+@layer utilities {
+  .shadow-button {
+    box-shadow: 0 4px 16px rgba(0,0,0,.25), 0 0 0 1px rgba(255,255,255,.1) inset;
+  }
+  .scroll-header-offset {
+    scroll-margin-top: 6rem; /* adjust if header height changes */
+  }
+}
+
+/* Owl bob keyframes */
+@keyframes owlBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* === Hero Floating Mascot (desktop only, bounce on Kid) ================== */
+@layer components {
+  .hero-mascot {
+    position: absolute;
+    top: 6%;
+    right: 2%;
+    width: clamp(96px, 15vw, 220px);
+    max-width: 220px;
+    z-index: 5; /* below hero content z-10? raise/lower as desired */
+    pointer-events: none;
+    animation: heroMascotFloat 6s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,.4));
+  }
+  .download-cta-phones::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(circle at 50% 100%, rgba(255,255,255,.08), transparent 70%);
+    filter: blur(32px);
+    z-index: -1;
+  }
+  /* When bouncing, run bounce once then resume float after 0.7s delay */
+  .hero-mascot-bounce {
+    animation:
+      heroMascotBounce 0.7s ease forwards,
+      heroMascotFloat 6s ease-in-out infinite 0.7s;
+  }
+  .flip3d-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 360 / 720;        /* maintain phone shape */
+    perspective: 1000px;
+  }
+  .flip3d-inner {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  .flip3d-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .flip3d-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .flip3d-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* screenshot fills phone-frame */
+    display: block;
+  }
+  .flip3d-back {
+    transform: rotateY(180deg);
+  }
+  .hiw-stage {
+    position: relative;
+    width: 100%;
+    max-width: 420px; /* width of step content block */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* The animated (outgoing) step is absolutely positioned over the current */
+  .hiw-step-anim {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+
+  /* Directional animations */
+  .hiw-enter-from-right {
+    animation: hiwEnterFromRight 0.6s ease forwards;
+  }
+  .hiw-enter-from-left {
+    animation: hiwEnterFromLeft 0.6s ease forwards;
+  }
+  .hiw-exit-to-left {
+    animation: hiwExitToLeft 0.6s ease forwards;
+  }
+  .hiw-exit-to-right {
+    animation: hiwExitToRight 0.6s ease forwards;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-mascot { display: none; }
+}
+
+@keyframes heroMascotFloat {
+  0%,100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50%     { transform: translateY(-8px) rotate(-3deg) scale(1.02); }
+}
+
+@keyframes heroMascotBounce {
+  0%   { transform: scale(1) translateY(0); }
+  30%  { transform: scale(1.08) translateY(-6px); }
+  60%  { transform: scale(0.96) translateY(2px); }
+  100% { transform: scale(1) translateY(0); }
+}
+@keyframes hiwEnterFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes hiwEnterFromLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+@keyframes hiwExitToLeft {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(-100%); opacity: 0; }
+}
+@keyframes hiwExitToRight {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
 }

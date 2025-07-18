@@ -54,76 +54,95 @@ export default function FAQ() {
   }
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+    <section
+      id="faq"
+      className="scroll-header-offset py-16 sm:py-24 section-dark-bg"
+    >
       <div className="w-full px-[10%]">
+        {/* Heading */}
         <div className="text-center mb-16">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
             <HelpCircle className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Frequently Asked <span className="text-blue-600">Questions</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            Frequently Asked{" "}
+            <span className="text-[hsl(var(--brand-playful))]">Questions</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Got questions? We've got answers. Here are the most common questions parents ask about TASK HABS.
+          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            Got questions? We&apos;ve got answers. Here are the most common questions parents ask about TASK HABS.
           </p>
         </div>
 
+        {/* FAQ List */}
         <div className="max-w-4xl mx-auto">
           <div className="grid gap-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className={`bg-white rounded-2xl shadow-lg border-l-4 transition-all duration-300 hover:shadow-xl ${
-                  openIndex === index
-                    ? "border-l-blue-600 shadow-xl transform scale-[1.02]"
-                    : "border-l-gray-200 hover:border-l-blue-400"
-                }`}
-              >
-                <button
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-blue-50 transition-colors rounded-2xl cursor-pointer"
-                  onClick={() => toggleFAQ(index)}
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index
+              return (
+                <div
+                  key={index}
+                  className={`rounded-2xl shadow-lg border backdrop-blur-sm transition-all duration-300 ${
+                    isOpen
+                      ? "border-[hsl(var(--brand-playful))]/70 bg-white/10 scale-[1.02] shadow-xl"
+                      : "border-white/10 bg-white/5 hover:border-[hsl(var(--brand-playful))]/50 hover:bg-white/10"
+                  }`}
                 >
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                      <span className="text-blue-600 font-bold text-sm">Q{index + 1}</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
-                  </div>
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      openIndex === index
-                        ? "bg-blue-600 text-white rotate-180"
-                        : "bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600"
-                    }`}
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full p-6 text-left flex items-center justify-between rounded-2xl transition-colors hover:bg-white/5"
                   >
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
-
-                {openIndex === index && (
-                  <div className="px-6 pb-6 animate-in slide-in-from-top-2 duration-300">
-                    <div className="ml-14 pl-4">
-                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                        <span className="font-bold text-sm text-[hsl(var(--brand-playful))]">
+                          Q{index + 1}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-semibold text-white pr-4">
+                        {faq.question}
+                      </h3>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        isOpen
+                          ? "bg-[hsl(var(--brand-playful))] text-white rotate-180"
+                          : "bg-white/10 text-white/70 hover:bg-white/20"
+                      }`}
+                    >
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-6 pb-6 animate-in slide-in-from-top-2 duration-300">
+                      <div className="ml-14 pl-4">
+                        <p className="text-white/80 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        {/* <div className="text-center mt-12">
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto border border-blue-100">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Still have questions?</h3>
-            <p className="text-gray-600 mb-6">
+        {/* Bottom CTA (optional) */}
+        {/*
+        <div className="text-center mt-12">
+          <div className="bg-white/5 border border-white/10 rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
+            <h3 className="text-xl font-bold text-white mb-4">Still have questions?</h3>
+            <p className="text-white/80 mb-6">
               Our support team is here to help! Get in touch and we'll get back to you within 24 hours.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+            <button className="primary-btn-lg">
               Contact Support
             </button>
           </div>
-        </div> */}
+        </div>
+        */}
       </div>
     </section>
   )

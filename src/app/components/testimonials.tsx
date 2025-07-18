@@ -90,35 +90,39 @@ export default function Testimonials() {
   }, [isPaused])
 
   return (
-    <section className="py-16 sm:py-24 bg-white overflow-hidden">
+    <section
+      id="testimonials"
+      className="scroll-header-offset py-16 sm:py-24 section-dark-bg overflow-hidden"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            What <span className="text-blue-600">Parents</span> Are Saying
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            What <span className="text-[hsl(var(--brand-playful))]">Parents</span> Are Saying
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
             Join thousands of families who have transformed their daily routines with TASK HABS.
           </p>
         </div>
 
+        {/* Auto‑scroll row */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-hidden pb-6"
+          className="flex gap-6 overflow-x-hidden pb-6 select-none"
           style={{ width: "100%" }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Duplicate testimonials for seamless loop */}
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <Card
               key={index}
-              className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl transform hover:-translate-y-2 hover:scale-105 flex-shrink-0"
+              className="border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl transform hover:-translate-y-2 hover:scale-105 flex-shrink-0"
               style={{ width: "calc(25% - 18px)", minWidth: "280px" }}
             >
               <CardContent className="p-6 h-full flex flex-col">
                 {/* Quote Icon */}
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <Quote className="w-5 h-5 text-blue-600" />
+                <div className="w-10 h-10 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] rounded-full flex items-center justify-center mb-4">
+                  <Quote className="w-5 h-5 text-white" />
                 </div>
 
                 {/* Rating */}
@@ -128,12 +132,14 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                {/* Testimonial Text */}
-                <p className="text-gray-600 mb-6 leading-relaxed flex-grow">"{testimonial.text}"</p>
+                {/* Text */}
+                <p className="text-white/80 mb-6 leading-relaxed flex-grow">
+                  “{testimonial.text}”
+                </p>
 
                 {/* Author */}
                 <div className="flex items-center mt-auto">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] rounded-full flex items-center justify-center mr-3">
                     <span className="text-white font-semibold text-sm">
                       {testimonial.name
                         .split(" ")
@@ -142,18 +148,14 @@ export default function Testimonials() {
                     </span>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    <p className="font-semibold text-white">{testimonial.name}</p>
+                    <p className="text-sm text-white/60">{testimonial.role}</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
-
-        {/* <div className="text-center mt-8">
-          <p className="text-sm text-gray-500">Hover over any card to pause the carousel</p>
-        </div> */}
       </div>
     </section>
   )

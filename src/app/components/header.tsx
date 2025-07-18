@@ -1,93 +1,181 @@
 "use client"
 
-import { useState } from "react"
+import { useState, MouseEvent } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import Image from "next/image"
+import { usePathname, useRouter } from "next/navigation"
+import { Menu, X, DownloadCloud } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
-import {Logo} from "@/app/components/logo"
+import { Logo } from "@/app/components/logo"
+
+// TODO: real store links
+const APP_STORE_URL = "#appstore"
+const PLAY_STORE_URL = "#playstore"
+
+const HOME_ANCHORS = [
+  { id: "features", label: "Features" },
+  { id: "how-it-works", label: "How It Works" },
+  { id: "testimonials", label: "Reviews" },
+  { id: "faq", label: "FAQs" },
+]
+
+const ROUTE_ITEMS = [
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/reviews", label: "Reviews" },
+]
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
+  const onHome = pathname === "/"
+
+  const close = () => setOpen(false)
+
+  const openStore = (url: string) => {
+    if (typeof window !== "undefined" && url !== "#") {
+      window.open(url, "_blank", "noopener,noreferrer")
+    }
+  }
+
+  function scrollToId(id: string) {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" })
+      history.replaceState(null, "", `/#${id}`)
+    }
+  }
+
+  function handleAnchorClick(
+    e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    id: string
+  ) {
+    e.preventDefault()
+    close()
+    if (onHome) {
+      scrollToId(id)
+    } else {
+      router.push(`/#${id}`)
+    }
+  }
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="w-full px-[10%]">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            {/* <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-              <Star className="w-4 h-4 text-white fill-current" />
-            </div> */}
-            <div className="w-8 h-8 bg-gradient-to-br rounded-full flex items-center justify-center">
-              <Logo />
-            </div>
-            <span className="text-xl font-bold text-gray-900">TASK HABS</span>
-          </Link>
+    <header className="header-surface text-white sticky top-0 z-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+        {/* Brand */}
+        <Link href="/" className="group flex items-center gap-2 shrink-0" onClick={close}>
+          <Logo className="h-8 w-auto" />
+          <Image
+            src="/images/mascot.png"
+            alt=""
+            width={32}
+            height={32}
+            className="h-8 w-8 hidden sm:block transition-transform group-hover:scale-110 animate-owl-bob"
+            priority
+          />
+          <span className="font-bold tracking-tight text-lg leading-none hidden sm:inline-block">
+            TaskHabs
+          </span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors">
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-6">
+          {onHome ? (
+            HOME_ANCHORS.map((item) => (
+              <a
+                key={item.id}
+                href={`/#${item.id}`}
+                className="header-nav-link"
+                onClick={(e) => handleAnchorClick(e, item.id)}
+              >
+                {item.label}
+              </a>
+            ))
+          ) : (
+            <Link href="/" className="header-nav-link" onClick={close}>
               Home
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
-              About
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Contact
-            </Link>
-            <Link href="/terms" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Terms and Conditions
-            </Link>
-            <Link href = "/" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full">
-              Download Now
-              </Link>
-          </nav>
+          )}
 
-          {/* Mobile Menu Button */}
-          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+          {ROUTE_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="header-nav-link"
+              onClick={close}
+            >
+              {item.label}
+            </Link>
+          ))}
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
-            <nav className="flex flex-col space-y-4">
-              <Link
-                href="/"
-                className="text-gray-700 hover:text-blue-600 transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
+          {/* Always show Download */}
+          <Button
+            className="header-download-btn"
+            onClick={() => openStore(APP_STORE_URL)}
+          >
+            <DownloadCloud className="w-4 h-4 mr-2" />
+            Download
+          </Button>
+        </nav>
+
+        {/* Mobile toggle */}
+        <button
+          aria-label="Toggle menu"
+          className="md:hidden inline-flex items-center justify-center p-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-playful))]"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div className="md:hidden border-t border-white/10 px-4 pb-6 pt-4 bg-header-surface/95 backdrop-blur-md">
+          <nav className="flex flex-col gap-4 text-base">
+            {onHome ? (
+              HOME_ANCHORS.map((item) => (
+                <a
+                  key={item.id}
+                  href={`/#${item.id}`}
+                  className="header-nav-link-mobile"
+                  onClick={(e) => handleAnchorClick(e, item.id)}
+                >
+                  {item.label}
+                </a>
+              ))
+            ) : (
+              <Link href="/" className="header-nav-link-mobile" onClick={close}>
                 Home
               </Link>
+            )}
+
+            {ROUTE_ITEMS.map((item) => (
               <Link
-                href="/about"
-                className="text-gray-700 hover:text-blue-600 transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
+                key={item.href}
+                href={item.href}
+                className="header-nav-link-mobile"
+                onClick={close}
               >
-                About
+                {item.label}
               </Link>
-              <Link
-                href="/contact"
-                className="text-gray-700 hover:text-blue-600 transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
+            ))}
+
+            {/* Always show Download */}
+            <div className="mt-4">
+              <Button
+                className="header-download-btn w-full"
+                onClick={() => {
+                  close()
+                  openStore(APP_STORE_URL)
+                }}
               >
-                Contact
-              </Link>
-              <Link
-                href="/terms"
-                className="text-gray-700 hover:text-blue-600 transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Terms and Conditions
-              </Link>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-full mt-4">
-                Download Now
+                Download App
               </Button>
-            </nav>
-          </div>
-        )}
-      </div>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }

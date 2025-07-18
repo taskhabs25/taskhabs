@@ -1,0 +1,304 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import { Button } from "@/app/components/ui/button"
+import { Logo } from "@/app/components/logo"
+import {
+  ShieldCheck,
+  Gift,
+  Trophy,
+  TrendingDown,
+  Smartphone,
+  Play,
+  Users,
+  Award,
+  TrendingUp,
+  Star,
+} from "lucide-react"
+
+const APP_STORE_URL = "" // TODO
+const PLAY_STORE_URL = "" // TODO
+
+type View = "parent" | "kid"
+
+export default function HeroV2() {
+  const [view, setView] = useState<View>("parent")
+  const [statsVisible, setStatsVisible] = useState(false)
+  const [bounce, setBounce] = useState(false)
+
+  // reveal stat cards
+  useEffect(() => {
+    const t = setTimeout(() => setStatsVisible(true), 600)
+    return () => clearTimeout(t)
+  }, [])
+
+//   // bounce mascot when switching *to* Kid view
+//   useEffect(() => {
+//     if (view === "kid") {
+//       setBounce(true)
+//       const bounceT = setTimeout(() => setBounce(false), 800)
+//       return () => clearTimeout(bounceT)
+//     }
+//   }, [view])
+
+  // assets
+  const parentImg = "/images/home-parent.png"
+  const kidImg = "/images/home-child.png"
+  const mascotImg = "/images/mascot.png"
+
+  return (
+    <section
+      id="hero"
+      className="relative overflow-hidden hero-gradient text-white pt-28 pb-32 sm:pt-32 sm:pb-40"
+    >
+      {/* Floating decorative mascot (desktop) */}
+      <div
+        className={`hero-mascot${bounce ? " hero-mascot-bounce" : ""}`}
+        aria-hidden="true"
+      >
+        <Image
+          src={mascotImg}
+          alt=""
+          width={220}
+          height={220}
+          priority
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        {/* Eyebrow / brand lockup */}
+        <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 mb-4 backdrop-blur-sm">
+          <Logo className="h-6 w-auto" />
+          <span className="text-xs font-semibold tracking-wide uppercase">
+            Introducing TaskHabs
+          </span>
+        </div>
+
+        {/* Headline */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 max-w-5xl mx-auto">
+          Guide Better Habits. <br className="hidden sm:block" />
+          Enjoy More  {" "}
+          <span className="text-[hsl(var(--brand-playful))]">
+              Family Time
+          </span>
+        </h1>
+
+        {/* Subhead w/ performance stat */}
+        <p className="text-lg sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
+          Set chores, track progress, and manage screen time from one app.
+          Families using TaskHabs report up to{" "}
+          <span className="font-semibold text-[hsl(var(--brand-playful))]">
+            30% less screen time
+          </span>{" "}
+          in the first month.
+        </p>
+
+        {/* Primary CTAs */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          {/* <Button className="primary-btn-lg" asChild>
+            <a href="#cta">
+              <Smartphone className="w-5 h-5 mr-2" />
+              Download Free
+            </a>
+          </Button> */}
+          <Button
+            variant="secondary"
+            className="secondary-btn-lg"
+            onClick={() =>
+              document
+                .getElementById("how-it-works")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <Play className="w-5 h-5 mr-2" />
+            See How It Works
+          </Button>
+        </div>
+
+        {/* Dual Messaging Pills */}
+        <div className="mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl mb-16 text-sm">
+          <div className="pill-parent">
+            <ShieldCheck className="w-4 h-4 mr-2" /> Parental Controls
+          </div>
+          <div className="pill-parent">
+            <TrendingDown className="w-4 h-4 mr-2" /> Reduce Screen Time
+          </div>
+          <div className="pill-kid">
+            <Gift className="w-4 h-4 mr-2" /> Earn Rewards
+          </div>
+          <div className="pill-kid">
+            <Trophy className="w-4 h-4 mr-2" /> Collect Badges
+          </div>
+        </div>
+
+        {/* Stats + Screenshot Grid */}
+        <div className="relative max-w-6xl mx-auto">
+          <div className="grid gap-8 items-start lg:grid-cols-[1fr_auto_1fr] lg:items-center">
+            {/* Left Stats */}
+            <div className="space-y-6 order-2 lg:order-1">
+              <div className="hero-card rounded-2xl p-6 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div
+                  className={`stats-counter ${
+                    statsVisible ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <p className="hero-title text-3xl font-bold">10K+</p>
+                  <p className="hero-description text-sm">Happy Families</p>
+                </div>
+              </div>
+
+              <div className="hero-card rounded-2xl p-6 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div
+                  className={`stats-counter ${
+                    statsVisible ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <p className="hero-title text-3xl font-bold">4.9★</p>
+                  <p className="hero-description text-sm">App Store Rating</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Center Screenshot Toggle */}
+            <div className="order-1 lg:order-2 flex justify-center">
+              <div className="w-full max-w-[240px] sm:max-w-[260px] md:max-w-[300px] lg:max-w-[320px] xl:max-w-[340px]">
+                {/* Toggle tabs */}
+                <div
+                  role="tablist"
+                  aria-label="App screenshots"
+                  className="inline-flex rounded-full bg-white/10 p-1 mb-6"
+                >
+                  <button
+                    role="tab"
+                    aria-selected={view === "parent"}
+                    className={`screenshot-tab ${
+                      view === "parent" ? "is-active" : ""
+                    }`}
+                    onClick={() => setView("parent")}
+                  >
+                    For Parents
+                  </button>
+                  <button
+                    role="tab"
+                    aria-selected={view === "kid"}
+                    className={`screenshot-tab ${
+                      view === "kid" ? "is-active" : ""
+                    }`}
+                    onClick={() => setView("kid")}
+                  >
+                    For Kids
+                  </button>
+                </div>
+
+                {/* Flip wrapper INSIDE phone frame */}
+                <div className="relative phone-frame mx-auto flip3d-wrapper">
+                  <div
+                    className={`flip3d-inner ${
+                      view === "kid" ? "is-flipped" : ""
+                    }`}
+                  >
+                    {/* front (parent) */}
+                    <div className="flip3d-face flip3d-front">
+                      <img
+                        src={parentImg}
+                        alt="Parent dashboard screenshot"
+                      />
+                    </div>
+                    {/* back (kid) */}
+                    <div className="flip3d-face flip3d-back">
+                      <img
+                        src={kidImg}
+                        alt="Kid view screenshot"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Captions (Pair A) */}
+                <div className="mt-4 text-center leading-snug px-2">
+                  {view === "parent" ? (
+                    <>
+                      <strong className="block text-base sm:text-lg font-semibold text-white">
+                        Parent Dashboard
+                      </strong>
+                      <span className="block text-xs sm:text-sm text-white/80">
+                        All kids in one view. Assign chores, track progress &amp;
+                        screen limits. Secure, parent‑only controls.
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <strong className="block text-base sm:text-lg font-semibold text-white">
+                        Child Dashboard
+                      </strong>
+                      <span className="block text-xs sm:text-sm text-white/80">
+                        Tap to complete, earn points, unlock badges. The owl
+                        cheers you on!
+                      </span>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Stats */}
+            <div className="space-y-6 order-3 lg:order-3">
+              <div className="hero-card rounded-2xl p-6 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-6 h-6 text-white" />
+                </div>
+                <div
+                  className={`stats-counter ${
+                    statsVisible ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <p className="hero-title text-3xl font-bold">30%</p>
+                  <p className="hero-description text-sm">
+                    Screen Time Reduced
+                  </p>
+                </div>
+              </div>
+
+              <div className="hero-card rounded-2xl p-6 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-6 h-6 text-white" />
+                </div>
+                <div
+                  className={`stats-counter ${
+                    statsVisible ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <p className="hero-title text-3xl font-bold">95%</p>
+                  <p className="hero-description text-sm">Task Completion</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Store CTA (repeat at bottom of hero) */}
+        <div id="cta" className="mt-20 flex flex-col sm:flex-row justify-center gap-4">
+          <Button asChild className="secondary-btn-lg">
+            <a href={APP_STORE_URL}>
+              <Smartphone className="w-5 h-5 mr-2" />
+              App Store
+            </a>
+          </Button>
+          <Button asChild className="secondary-btn-lg">
+            <a href={PLAY_STORE_URL}>
+              <Smartphone className="w-5 h-5 mr-2" />
+              Google Play
+            </a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
