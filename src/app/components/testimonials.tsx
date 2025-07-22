@@ -62,7 +62,6 @@ const testimonials = [
     text: "The app works perfectly on all our devices. Kids can check their tasks anywhere, anytime.",
   },
 ]
-
 export default function Testimonials() {
   const [isPaused, setIsPaused] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -77,7 +76,7 @@ export default function Testimonials() {
 
     const scroll = () => {
       if (!isPaused) {
-        scrollPosition += 1
+        scrollPosition += 0.5
         if (scrollPosition >= scrollWidth - clientWidth) {
           scrollPosition = 0
         }
@@ -92,7 +91,8 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="scroll-header-offset py-16 sm:py-24 section-dark-bg overflow-hidden"
+      className="scroll-header-offset py-16 sm:py-24 section-dark-bg"
+      /* removed overflow-hidden here */
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
@@ -108,7 +108,7 @@ export default function Testimonials() {
         {/* Auto‑scroll row */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-hidden pb-6 select-none"
+          className="flex gap-6 overflow-x-hidden overflow-y-visible pt-8 pb-8 select-none"
           style={{ width: "100%" }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}

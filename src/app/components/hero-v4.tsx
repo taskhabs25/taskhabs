@@ -9,7 +9,6 @@ import {
   Gift,
   Trophy,
   TrendingDown,
-  Smartphone,
   Play,
   Users,
   Award,
@@ -25,22 +24,12 @@ type View = "parent" | "kid"
 export default function HeroV2() {
   const [view, setView] = useState<View>("parent")
   const [statsVisible, setStatsVisible] = useState(false)
-  const [bounce, setBounce] = useState(false)
+  const [bounce] = useState(false)
 
-  // reveal stat cards
   useEffect(() => {
     const t = setTimeout(() => setStatsVisible(true), 600)
     return () => clearTimeout(t)
   }, [])
-
-//   // bounce mascot when switching *to* Kid view
-//   useEffect(() => {
-//     if (view === "kid") {
-//       setBounce(true)
-//       const bounceT = setTimeout(() => setBounce(false), 800)
-//       return () => clearTimeout(bounceT)
-//     }
-//   }, [view])
 
   // assets
   const parentImg = "/images/home-parent.png"
@@ -57,13 +46,7 @@ export default function HeroV2() {
         className={`hero-mascot${bounce ? " hero-mascot-bounce" : ""}`}
         aria-hidden="true"
       >
-        <Image
-          src={mascotImg}
-          alt=""
-          width={220}
-          height={220}
-          priority
-        />
+        <Image src={mascotImg} alt="" width={220} height={220} priority />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -78,13 +61,11 @@ export default function HeroV2() {
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 max-w-5xl mx-auto">
           Guide Better Habits. <br className="hidden sm:block" />
-          Enjoy More  {" "}
-          <span className="text-[hsl(var(--brand-playful))]">
-              Family Time
-          </span>
+          Enjoy More{" "}
+          <span className="text-[hsl(var(--brand-playful))]">Family Time</span>
         </h1>
 
-        {/* Subhead w/ performance stat */}
+        {/* Subhead */}
         <p className="text-lg sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
           Set chores, track progress, and manage screen time from one app.
           Families using TaskHabs report up to{" "}
@@ -96,12 +77,6 @@ export default function HeroV2() {
 
         {/* Primary CTAs */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          {/* <Button className="primary-btn-lg" asChild>
-            <a href="#cta">
-              <Smartphone className="w-5 h-5 mr-2" />
-              Download Free
-            </a>
-          </Button> */}
           <Button
             variant="secondary"
             className="secondary-btn-lg"
@@ -117,7 +92,7 @@ export default function HeroV2() {
         </div>
 
         {/* Dual Messaging Pills */}
-        <div className="mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl mb-16 text-sm">
+        <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-16">
           <div className="pill-parent">
             <ShieldCheck className="w-4 h-4 mr-2" /> Parental Controls
           </div>
@@ -205,23 +180,34 @@ export default function HeroV2() {
                     }`}
                   >
                     {/* front (parent) */}
-                    <div className="flip3d-face flip3d-front">
-                      <img
-                        src={parentImg}
-                        alt="Parent dashboard screenshot"
-                      />
-                    </div>
-                    {/* back (kid) */}
-                    <div className="flip3d-face flip3d-back">
-                      <img
-                        src={kidImg}
-                        alt="Kid view screenshot"
-                      />
-                    </div>
+                    {/* front (parent) */}
+                <div className="flip3d-face flip3d-front overflow-hidden rounded-[2rem] pb-3">
+                  <Image
+                    src={parentImg}
+                    alt="Parent dashboard screenshot"
+                    width={360}
+                    height={720}
+                    className="w-full h-full object-contain"
+                    priority
+                  />
+                </div>
+
+                {/* back (kid) */}
+                <div className="flip3d-face flip3d-back overflow-hidden rounded-[2rem] pb-3">
+                  <Image
+                    src={kidImg}
+                    alt="Kid view screenshot"
+                    width={360}
+                    height={720}
+                    className="w-full h-full object-contain"
+                    priority
+                  />
+                </div>
+
                   </div>
                 </div>
 
-                {/* Captions (Pair A) */}
+                {/* Captions */}
                 <div className="mt-4 text-center leading-snug px-2">
                   {view === "parent" ? (
                     <>
@@ -283,11 +269,11 @@ export default function HeroV2() {
           </div>
         </div>
 
-        {/* Store CTA (repeat at bottom of hero) */}
+        {/* Store CTA */}
         <div
           id="cta"
-          className="mt-20 flex flex-col sm:flex-row justify-center items-center gap-4">
-          {/* App Store Badge */}
+          className="mt-20 flex flex-col sm:flex-row justify-center items-center gap-4"
+        >
           <a
             href={APP_STORE_URL}
             target="_blank"
@@ -297,13 +283,12 @@ export default function HeroV2() {
             <Image
               src="/images/apple_logo_white.svg"
               alt="Download on the App Store"
-              width={200}   // adjust to match Apple’s official ratio
+              width={200}
               height={70}
               className="hover:opacity-90 transition-opacity"
             />
           </a>
 
-          {/* Play Store Badge */}
           <a
             href={PLAY_STORE_URL}
             target="_blank"
@@ -313,7 +298,7 @@ export default function HeroV2() {
             <Image
               src="/images/playstore_logo.png"
               alt="Get it on Google Play"
-              width={200}   // adjust as needed
+              width={200}
               height={70}
               className="hover:opacity-90 transition-opacity"
             />

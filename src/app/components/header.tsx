@@ -2,7 +2,7 @@
 
 import { useState, MouseEvent } from "react"
 import Link from "next/link"
-import Image from "next/image"
+// import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 import { Menu, X, DownloadCloud } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
@@ -10,7 +10,7 @@ import { Logo } from "@/app/components/logo"
 
 // TODO: real store links
 const APP_STORE_URL = "#appstore"
-const PLAY_STORE_URL = "#playstore"
+// const PLAY_STORE_URL = "#playstore"
 
 const HOME_ANCHORS = [
   { id: "features", label: "Features" },
@@ -66,14 +66,14 @@ export default function Header() {
         {/* Brand */}
         <Link href="/" className="group flex items-center gap-2 shrink-0" onClick={close}>
           <Logo className="h-8 w-auto" />
-          <Image
+          {/* <Image
             src="/images/mascot.png"
             alt=""
             width={32}
             height={32}
             className="h-8 w-8 hidden sm:block transition-transform group-hover:scale-110 animate-owl-bob"
             priority
-          />
+          /> */}
           <span className="font-bold tracking-tight text-lg leading-none hidden sm:inline-block">
             TaskHabs
           </span>

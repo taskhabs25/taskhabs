@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Card, CardContent } from "@/app/components/ui/card"
-import { Mail, Phone, MapPin } from "lucide-react"
-
+import { Mail, MapPin, Globe } from "lucide-react"
+import Image from "next/image"
 export const metadata: Metadata = {
   title: "Contact Us - TASK HABS",
   description:
@@ -30,77 +30,91 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Info */}
-      <section className="py-16 sm:py-24 ">
-        <div className="w-full px-[10%] flex justify-center">
-          <Card className="max-w-2xl w-full mx-auto bg-white/5 border border-white/10 text-white shadow-lg rounded-2xl hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 hover:scale-105">
-            <CardContent className="p-8">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold mb-6">
-                  How to <span className="text-[hsl(var(--brand-playful))]">Reach Us</span>
-                </h2>
-                <p className="text-white/80 leading-relaxed">
-                  Choose the method that works best for you. We typically respond
-                  within 24 hours during business days.
-                </p>
-              </div>
-
-              <div className="space-y-8">
-                {/* Email */}
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] shadow">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Email Support</h3>
-                    <p className="text-white/80 mb-2">For general questions and support</p>
-                    <a
-                      href="mailto:hello@taskhabs.com"
-                      className="font-medium text-[hsl(var(--brand-pro))] hover:underline"
-                    >
-                      hello@taskhabs.com
-                    </a>
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] shadow">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Phone Support</h3>
-                    <p className="text-white/80 mb-2">Monday – Friday, 9 AM – 6 PM PST</p>
-                    <a
-                      href="tel:1-800-TASK-HABS"
-                      className="font-medium text-[hsl(var(--brand-pro))] hover:underline"
-                    >
-                      1-800-TASK-HABS
-                    </a>
-                  </div>
-                </div>
-
-                {/* Office */}
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] shadow">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Our Office</h3>
-                    <p className="text-white/80 leading-relaxed">
-                      123 Family Street
-                      <br />
-                      San Francisco, CA 94102
-                      <br />
-                      United States
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+    {/* Contact Info */}
+<section className="py-16 sm:py-24">
+  <div className="w-full px-[10%] flex justify-center">
+    <Card className="max-w-2xl w-full mx-auto bg-white/5 border border-white/10 text-white shadow-lg rounded-2xl hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 hover:scale-105">
+      <CardContent className="p-8">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold mb-6">
+            How to <span className="text-[hsl(var(--brand-playful))]">Reach Us</span>
+          </h2>
+          <p className="text-white/80 leading-relaxed">
+            Choose the method that works best for you. We typically respond within 24 hours during business days.
+          </p>
         </div>
-      </section>
+
+        <div className="space-y-8">
+          {/* Email */}
+          <div className="flex items-start">
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] shadow">
+              <Mail className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Email Support</h3>
+              <p className="text-white/80 mb-2">For general questions and support</p>
+              <a
+                href="mailto:info@taskhabs.com"
+                className="font-medium text-[hsl(var(--brand-pro))] hover:underline"
+              >
+                info@taskhabs.com
+              </a>
+            </div>
+          </div>
+
+          {/* Socials */}
+          <div className="flex items-start">
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] shadow">
+              {/* you could also import SVGs; using next/image keeps it simple */}
+              {/* <Image src="/images/insta.png" alt="Instagram" width={26} height={26} /> */}
+              <Globe className="w-6 h-6 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-semibold mb-2">Follow & DM Us</h3>
+              <p className="text-white/80 mb-3">Quick updates, tips & support via socials</p>
+
+              <div className="flex gap-4 flex-wrap">
+                <a
+                  href="https://www.instagram.com/taskhabs?igsh=b3p0MDd6bHo5aWxu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 transition"
+                >
+                  <Image src="/images/insta.png" alt="Instagram" width={20} height={20} />
+                  <span className="text-sm font-medium">@taskhabs</span>
+                </a>
+
+                <a
+                  href="https://www.tiktok.com/@taskhabs?_t=ZS-8yEdgoDI3Oi&_r=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 transition"
+                >
+                  <Image src="/images/tiktok.png" alt="TikTok" width={20} height={20} />
+                  <span className="text-sm font-medium">@taskhabs</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Office */}
+          <div className="flex items-start">
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] shadow">
+              <MapPin className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Our Office</h3>
+              <p className="text-white/80 leading-relaxed">
+                Sydney, Australia
+              </p>
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  </div>
+</section>
+
     </main>
   )
 }
