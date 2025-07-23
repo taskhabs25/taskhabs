@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Card, CardContent } from "@/app/components/ui/card"
-import { Mail, MapPin, Globe } from "lucide-react"
+import { Mail, Globe } from "lucide-react"
 import Image from "next/image"
 export const metadata: Metadata = {
   title: "Contact Us - TASK HABS",
@@ -98,7 +98,7 @@ export default function Contact() {
           </div>
 
           {/* Office */}
-          <div className="flex items-start">
+          {/* <div className="flex items-start">
             <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] shadow">
               <MapPin className="w-6 h-6 text-white" />
             </div>
@@ -108,7 +108,7 @@ export default function Contact() {
                 Sydney, Australia
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </CardContent>
     </Card>
