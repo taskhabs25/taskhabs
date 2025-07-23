@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Mail, Phone, MapPin } from "lucide-react"
+import Image from "next/image"
+import { Mail, MapPin } from "lucide-react"
 import { Logo } from "@/app/components/logo"
 
 export default function Footer() {
@@ -74,23 +75,56 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact / Socials */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-[hsl(var(--brand-playful))]">Contact Info</h3>
             <ul className="space-y-3 text-white/70">
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-3 text-[hsl(var(--brand-pro))]" />
-                <span>hello@taskhabs.com</span>
+                <span>info@taskhabs.com</span>
               </li>
-              <li className="flex items-center">
-                <Phone className="w-4 h-4 mr-3 text-[hsl(var(--brand-pro))]" />
-                <span>1-800-TASK-HABS</span>
-              </li>
+              {/* Phone removed as requested */}
               <li className="flex items-center">
                 <MapPin className="w-4 h-4 mr-3 text-[hsl(var(--brand-pro))]" />
-                <span>San Francisco, CA</span>
+                <span>Sydney, Australia</span>
               </li>
             </ul>
+
+            {/* Socials */}
+            <div className="mt-6">
+              {/* <h4 className="text-sm font-semibold mb-3 text-white/80 uppercase tracking-wide">Follow Us</h4> */}
+              <div className="flex items-center gap-4">
+                <Link
+                  href="https://www.instagram.com/taskhabs?igsh=b3p0MDd6bHo5aWxu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-90 transition-opacity"
+                  aria-label="TaskHabs on Instagram"
+                >
+                  <Image
+                    src="/images/insta.png"
+                    alt="Instagram"
+                    width={28}
+                    height={28}
+                  />
+                </Link>
+
+                <Link
+                  href="https://www.tiktok.com/@taskhabs?_t=ZS-8yEdgoDI3Oi&_r=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-90 transition-opacity"
+                  aria-label="TaskHabs on TikTok"
+                >
+                  <Image
+                    src="/images/tiktok.png"
+                    alt="TikTok"
+                    width={28}
+                    height={28}
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -100,23 +134,14 @@ export default function Footer() {
             <p className="text-white/70 leading-relaxed">
               © 2025 TaskHabs. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              <Link
-                href="/terms"
-                className="text-white/70 leading-relaxed"
-              >
+            <div className="flex space-x-6 mt-4 sm:mt-0">
+              <Link href="/terms" className="text-white/70 leading-relaxed hover:text-white transition-colors">
                 Terms
               </Link>
-              <Link
-                href="/terms"
-                className="text-white/70 leading-relaxed"
-              >
+              <Link href="/terms" className="text-white/70 leading-relaxed hover:text-white transition-colors">
                 Privacy
               </Link>
-              <Link
-                href="/contact"
-                className="text-white/70 leading-relaxed"
-              >
+              <Link href="/contact" className="text-white/70 leading-relaxed hover:text-white transition-colors">
                 Support
               </Link>
             </div>
