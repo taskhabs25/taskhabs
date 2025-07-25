@@ -122,21 +122,7 @@ export default function HeroV2() {
           in the first month.
         </p>
 
-        {/* Primary CTAs */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-          <Button
-            variant="secondary"
-            className="secondary-btn-lg"
-            onClick={() =>
-              document
-                .getElementById("how-it-works")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            <Play className="w-5 h-5 mr-2" />
-            See How It Works
-          </Button>
-        </div>
+        
 
         {/* Waitlist Form (attention‑grabber) */}
         <form
@@ -169,6 +155,21 @@ export default function HeroV2() {
           </div>
         </form>
 
+        {/* Primary CTAs */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+          <Button
+            variant="secondary"
+            className="secondary-btn-lg"
+            onClick={() =>
+              document
+                .getElementById("how-it-works")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <Play className="w-5 h-5 mr-2" />
+            See How It Works
+          </Button>
+        </div>
 
         {/* Messaging Pills */}
         <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-16 text-sm">
