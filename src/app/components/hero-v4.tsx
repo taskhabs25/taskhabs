@@ -5,15 +5,18 @@ import Image from "next/image"
 import { Button } from "@/app/components/ui/button"
 import { Logo } from "@/app/components/logo"
 import {
-  ShieldCheck,
-  Gift,
-  Trophy,
-  TrendingDown,
+  //ShieldCheck,
+  //Gift,
+  //Trophy,
+  //TrendingDown,
   Play,
   Users,
   Award,
   TrendingUp,
   Star,
+  //Award,
+  School,
+  //Target,
 } from "lucide-react"
 
 const APP_STORE_URL = "" // TODO
@@ -113,9 +116,25 @@ const handleJoin = async (e: FormEvent) => {
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 mb-4 backdrop-blur-sm">
           <Logo className="h-6 w-auto" />
-          <span className="text-xs font-semibold tracking-wide uppercase">
-            Introducing TaskHabs
+          <span className="text-sm sm:text-base font-bold tracking-wide uppercase">
+            M.E.E.R
           </span>
+        </div>
+
+        {/* Messaging Pills */}
+        <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-16 text-sm">
+          <div className="pill-parent">
+            <Star className="w-6 h-6 mr-3" /> Motivate
+          </div>
+          <div className="pill-parent">
+            <School className="w-6 h-6 mr-3" /> Educate
+          </div>
+          <div className="pill-kid">
+            <Play className="w-6 h-6 mr-3" /> Entertain
+          </div>
+          <div className="pill-kid">
+            <Award className="w-6 h-6 mr-3" /> Reward
+          </div>
         </div>
 
         {/* Headline */}
@@ -184,21 +203,7 @@ const handleJoin = async (e: FormEvent) => {
           </Button>
         </div>
 
-        {/* Messaging Pills */}
-        <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-16 text-sm">
-          <div className="pill-parent">
-            <ShieldCheck className="w-4 h-4 mr-2" /> Parental Controls
-          </div>
-          <div className="pill-parent">
-            <TrendingDown className="w-4 h-4 mr-2" /> Reduce Screen Time
-          </div>
-          <div className="pill-kid">
-            <Gift className="w-4 h-4 mr-2" /> Earn Rewards
-          </div>
-          <div className="pill-kid">
-            <Trophy className="w-4 h-4 mr-2" /> Collect Badges
-          </div>
-        </div>
+        
 
         {/* Stats + Screenshot Grid */}
         <div className="relative max-w-6xl mx-auto">
