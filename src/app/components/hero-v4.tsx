@@ -18,6 +18,7 @@ import {
 
 const APP_STORE_URL = "" // TODO
 const PLAY_STORE_URL = "" // TODO
+//const WAITLIST_API = process.env.NEXT_PUBLIC_WAITLIST_URL
 
 type View = "parent" | "kid"
 
@@ -33,27 +34,39 @@ export default function HeroV2() {
     return () => clearTimeout(t)
   }, [])
 
- const handleJoin = async (e: FormEvent) => {
+const handleJoin = async (e: FormEvent) => {
   e.preventDefault()
+
   try {
     const res = await fetch("/api/waitlist", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
       body: JSON.stringify({ email }),
     })
-    const data = await res.json()
-    if (res.ok) {
-      setShowModal(true)     // show your custom thank‑you modal
+
+    console.log("[waitlist] client saw status:", res.status)
+
+    if (res.status === 204) {
+      // Success — empty body
+      setShowModal(true)
       setEmail("")
-    } else {
-      console.error(data.error)
-      // optionally show an inline error message
+      return
     }
+
+    // On 422 or 500 there _should_ be a JSON error payload
+    const payload = await res.json().catch(() => ({}))
+    console.error("[waitlist] client saw error payload:", payload)
+    // e.g. you could show payload.email or payload.message to the user here
+
   } catch (err) {
-    console.error(err)
-    // show error to user
+    console.error("[waitlist] fetch failed:", err)
+    // Optionally surface an inline error to the user
   }
 }
+
 
 
   // assets
