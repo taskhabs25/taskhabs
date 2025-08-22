@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from "next/link"
+//import Link from "next/link"
 import { Star } from "lucide-react"
 import { Logo } from "@/app/components/logo"
 
@@ -16,7 +16,7 @@ export default function DownloadCTA() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left relative z-10">
-            <Logo className="w-20 mx-auto lg:mx-0 mb-4" />
+            <Logo className="w-25 mx-auto lg:mx-0 mb-4" />
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
               Ready to <span className="text-[hsl(var(--brand-playful))]">Transform</span> Your Family&apos;s Routine?
             </h2>
