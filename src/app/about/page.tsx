@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
+//import Image from "next/image"
 import { Card, CardContent } from "@/app/components/ui/card"
 import { Logo } from "@/app/components/logo" 
 import {
@@ -13,7 +13,6 @@ import {
   Search,
   CheckCircle,
   TrendingUp,
-  Star,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -89,67 +88,84 @@ export default function About() {
               About <span className="text-[hsl(var(--brand-playful))]">TaskHabs</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              We&apos;re on a mission to help families build healthy habits and create
-              positive routines that bring everyone closer together.
+              TaskHabs is built on the <strong>MEER Concept</strong> — Motivate, Educate,
+              Entertain, Reward — a fun and rewarding way for kids to learn
+              responsibility while parents enjoy stress-free parenting.
             </p>
+            {/* <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mt-6">
+              At the heart of the TaskHabs App, MEER provides a simple yet powerful
+              framework that helps children build positive habits for life. By combining
+              inspiration, education, fun, and rewards, TaskHabs bridges parenting and
+              play to create lasting change.
+            </p> */}
           </div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 sm:py-24 ">
-  <div className="w-full px-[10%]">
-    <div className="grid lg:grid-cols-2 gap-12 items-center">
-      <Card className="bg-white/5 border border-white/10 text-white shadow-lg rounded-2xl hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2">
-        <CardContent className="p-8 text-white [&_p]:text-white transition-none">
-          <div className="flex items-center mb-6">
-            <div className="w-12 h-12 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] rounded-xl flex items-center justify-center mr-4">
-              <Lightbulb className="w-6 h-6 text-white" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Our <span className="text-[hsl(var(--brand-playful))]">Mission</span>
-            </h2>
-          </div>
-          <div className="space-y-6 text-lg leading-relaxed">
-            <p>
-              TASK HABS was born from the simple belief that every child deserves to
-              feel accomplished and every parent deserves tools that make parenting
-              more joyful.
-            </p>
-            <p>
-              We&apos;ve seen how traditional reward charts and chore systems often fall
-              short. That&apos;s why we created a digital solution that grows with your
-              family, adapts to your needs, and makes building good habits feel like a
-              game rather than a chore.
-            </p>
-            <p>
-              Our app isn&apos;t just about getting kids to do their tasks—it&apos;s about
-              building confidence, teaching responsibility, and creating positive family
-              dynamics that last a lifetime.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Mission Screenshot w/ hover pop */}
-      <div className="flex justify-center">
-        <div className="relative group">
-          <div className="bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl transition-transform duration-300 ease-out group-hover:scale-[1.01] group-hover:-translate-y-2">
-            <div className="bg-white rounded-[2rem] overflow-hidden">
-              <Image
-                src="/images/home-parent.png"
-                alt="TaskHabs Family Dashboard"
-                width={300}
-                height={600}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
+      <section className="py-16 sm:py-24">
+        <div className="w-full px-[10%] flex justify-center">
+          <Card className="w-full max-w-4xl bg-white/5 border border-white/10 text-white shadow-lg rounded-2xl hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2">
+            <CardContent className="p-8 text-white [&_p]:text-white transition-none text-justify">
+              <div className="flex flex-col items-center mb-6 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] rounded-xl flex items-center justify-center mb-4">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white">
+                  Our <span className="text-[hsl(var(--brand-playful))]">Mission</span>
+                </h2>
+              </div>
+              <div className="space-y-6 text-lg leading-relaxed">
+                <p>
+                  Our mission is rooted in MEER — a unique approach designed to
+                  Motivate, Educate, Entertain, and Reward children while empowering
+                  parents with tools that make family life joyful.
+                </p>
+                <p>
+                  <span className="text-[hsl(var(--brand-playful))] font-semibold">
+                    Motivate:
+                  </span>{" "}
+                  Children thrive when they feel inspired. TaskHabs motivates kids by
+                  turning everyday routines — like tidying up, brushing teeth, or
+                  finishing homework — into fun challenges they actually want to
+                  complete.
+                </p>
+                <p>
+                  <span className="text-[hsl(var(--brand-playful))] font-semibold">
+                    Educate:
+                  </span>{" "}
+                  Every task becomes a learning opportunity. TaskHabs helps kids
+                  understand the “why” behind their habits, teaching responsibility,
+                  independence, and life skills that go beyond the app.
+                </p>
+                <p>
+                  <span className="text-[hsl(var(--brand-playful))] font-semibold">
+                    Entertain:
+                  </span>{" "}
+                  Good habits don’t have to be boring! With colorful dashboards,
+                  playful challenges, and gamified experiences, TaskHabs keeps kids
+                  engaged and entertained while staying on track.
+                </p>
+                <p>
+                  <span className="text-[hsl(var(--brand-playful))] font-semibold">
+                    Reward:
+                  </span>{" "}
+                  Every effort deserves recognition. Parents can set up meaningful
+                  rewards — from pocket money to wish-list items — so kids see the real
+                  benefits of their consistency.
+                </p>
+                <p>
+                  The MEER Concept works because it gives children motivation to act,
+                  knowledge to grow, joy to keep going, and rewards that make habits
+                  stick. With TaskHabs, parenting becomes easier and kids feel
+                  empowered to succeed — one habit at a time.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-      </div>
-    </div>  
-  </div>
-</section>
+      </section>
+
 
 
       {/* Values Section */}
@@ -225,12 +241,8 @@ export default function About() {
             {/* Quote Section */}
             <div className="mt-16">
               <Card className="relative overflow-hidden bg-white/5 border border-white/10 shadow-xl rounded-2xl text-white text-center">
-                {/* subtle brand glow overlay */}
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[hsl(var(--brand-pro))/0.25] via-transparent to-[hsl(var(--brand-playful))/0.25]" />
                 <CardContent className="relative p-8">
-                  {/* <div className="w-12 h-12 mx-auto mb-6 rounded-full bg-gradient-to-br from-[hsl(var(--brand-pro))] to-[hsl(var(--brand-playful))] flex items-center justify-center">
-                    {/* <Star className="w-6 h-6 text-white" /> *}
-                  </div> */}
                   <Logo className="w-12 h-12 mx-auto mb-6"/>
                   <blockquote className="text-xl sm:text-2xl font-medium mb-6 italic">
                     &quot;Every family deserves tools that bring them closer together, not drive them apart. That&apos;s the heart of everything we build at TaskHabs.&quot;

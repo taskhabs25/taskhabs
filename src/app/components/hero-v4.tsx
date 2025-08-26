@@ -139,19 +139,20 @@ const handleJoin = async (e: FormEvent) => {
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 max-w-5xl mx-auto">
-          Guide Better Habits. <br className="hidden sm:block" />
-          Enjoy More{" "}
-          <span className="text-[hsl(var(--brand-playful))]">Family Time</span>
+          Guide Better Habits <br className="hidden sm:block" />
+          {" "}
+          <span className="text-[hsl(var(--brand-playful))]">With M.E.E.R</span>
         </h1>
 
         {/* Subhead */}
         <p className="text-lg sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
-          Set chores, track progress, and manage screen time from one app.
-          Families using TaskHabs report up to{" "}
+          Taskhabs is build on {" "}
           <span className="font-semibold text-[hsl(var(--brand-playful))]">
-            30% less screen time
-          </span>{" "}
-          in the first month.
+            MOTIVATE, EDUCATE, ENTERTAIN AND REWARD - M.E.E.R
+          </span>{" "} <br />
+          A fun and rewarding way for kids to learn responsibility 
+          while parents enjoy stress free parenting.
+
         </p>
 
         
