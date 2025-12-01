@@ -16,7 +16,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Us - TASK HABS",
+  title: "About Us - IMEER",
   description:
     "Learn about our mission to help families build healthy habits and create positive routines together.",
 }
@@ -55,7 +55,7 @@ const storySteps = [
     icon: AlertCircle,
     title: "The Problem",
     content:
-      "TASK HABS started when our founder, a parent of three, realized that traditional chore charts weren't working for modern families. Kids were losing interest, parents were frustrated, and the whole system felt more like punishment than positive reinforcement.",
+      "IMEER started when our founder, a parent of three, realized that traditional chore charts weren't working for modern families. Kids were losing interest, parents were frustrated, and the whole system felt more like punishment than positive reinforcement.",
   },
   {
     icon: Search,
@@ -67,13 +67,13 @@ const storySteps = [
     icon: CheckCircle,
     title: "The Solution",
     content:
-      "We built TASK HABS to be more than just a digital chore chart. It's a comprehensive system that helps families communicate better, celebrate achievements together, and build habits that contribute to long-term success and happiness.",
+      "We built IMEER to be more than just a digital chore chart. It's a comprehensive system that helps families communicate better, celebrate achievements together, and build habits that contribute to long-term success and happiness.",
   },
   {
     icon: TrendingUp,
     title: "The Impact",
     content:
-      "Today, thousands of families use TASK HABS to create more organized, positive, and connected home environments. We're proud to be part of their journey and committed to continuously improving our platform based on their feedback and needs.",
+      "Today, thousands of families use IMEER to create more organized, positive, and connected home environments. We're proud to be part of their journey and committed to continuously improving our platform based on their feedback and needs.",
   },
 ]
 
@@ -125,7 +125,7 @@ export default function About() {
                   <span className="text-[hsl(var(--brand-playful))] font-semibold">
                     Motivate:
                   </span>{" "}
-                  Children thrive when they feel inspired. TaskHabs motivates kids by
+                  Children thrive when they feel inspired. IMEER motivates kids by
                   turning everyday routines — like tidying up, brushing teeth, or
                   finishing homework — into fun challenges they actually want to
                   complete.
@@ -134,7 +134,7 @@ export default function About() {
                   <span className="text-[hsl(var(--brand-playful))] font-semibold">
                     Educate:
                   </span>{" "}
-                  Every task becomes a learning opportunity. TaskHabs helps kids
+                  Every task becomes a learning opportunity. IMEER helps kids
                   understand the “why” behind their habits, teaching responsibility,
                   independence, and life skills that go beyond the app.
                 </p>
@@ -143,7 +143,7 @@ export default function About() {
                     Entertain:
                   </span>{" "}
                   Good habits don’t have to be boring! With colorful dashboards,
-                  playful challenges, and gamified experiences, TaskHabs keeps kids
+                  playful challenges, and gamified experiences, IMEER keeps kids
                   engaged and entertained while staying on track.
                 </p>
                 <p>
@@ -157,7 +157,7 @@ export default function About() {
                 <p>
                   The MEER Concept works because it gives children motivation to act,
                   knowledge to grow, joy to keep going, and rewards that make habits
-                  stick. With TaskHabs, parenting becomes easier and kids feel
+                  stick. With IMEER, parenting becomes easier and kids feel
                   empowered to succeed — one habit at a time.
                 </p>
               </div>
@@ -211,7 +211,7 @@ export default function About() {
                 Our <span className="text-[hsl(var(--brand-playful))]">Story</span>
               </h2>
               <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
-                From frustration to innovation — here&apos;s how TaskHabs came to life.
+                From frustration to innovation — here&apos;s how IMEER came to life.
               </p>
             </div>
 

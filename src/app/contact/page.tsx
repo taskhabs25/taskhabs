@@ -3,9 +3,9 @@ import { Card, CardContent } from "@/app/components/ui/card"
 import { Mail, Globe } from "lucide-react"
 import Image from "next/image"
 export const metadata: Metadata = {
-  title: "Contact Us - TASK HABS",
+  title: "Contact Us - IMEER",
   description:
-    "Get in touch with the TASK HABS team. We're here to help with questions, support, and feedback.",
+    "Get in touch with the IMEER team. We're here to help with questions, support, and feedback.",
 }
 
 export default function Contact() {
@@ -91,7 +91,7 @@ export default function Contact() {
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 transition"
                 >
                   <Image src="/images/tiktok.png" alt="TikTok" width={20} height={20} />
-                  <span className="text-sm font-medium">@taskhabs</span>
+                  <span className="text-sm font-medium">@IMEER</span>
                 </a>
               </div>
             </div>
