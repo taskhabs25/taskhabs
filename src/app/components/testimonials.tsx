@@ -10,7 +10,7 @@ const testimonials = [
     role: "Mother of 2",
     avatar: "/placeholder.svg?height=60&width=60",
     rating: 5,
-    text: "TASK HABS has completely transformed our morning routine! My kids actually look forward to completing their tasks now.",
+    text: "IMEER has completely transformed our morning routine! My kids actually look forward to completing their tasks now.",
   },
   {
     name: "Mike Chen",
@@ -38,7 +38,7 @@ const testimonials = [
     role: "Mother of 4",
     avatar: "/placeholder.svg?height=60&width=60",
     rating: 5,
-    text: "Managing tasks for four kids was chaos until we found TASK HABS. Now everyone knows what to do and when!",
+    text: "Managing tasks for four kids was chaos until we found IMEER. Now everyone knows what to do and when!",
   },
   {
     name: "James Wilson",
@@ -101,7 +101,7 @@ export default function Testimonials() {
             What <span className="text-[hsl(var(--brand-playful))]">Parents</span> Are Saying
           </h2>
           <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of families who have transformed their daily routines with TASK HABS.
+            Join thousands of families who have transformed their daily routines with IMEER.
           </p>
         </div>
 

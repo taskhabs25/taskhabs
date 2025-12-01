@@ -2,7 +2,7 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
+// import Image from "next/image"
 import { Plus, Minus } from "lucide-react"
 
 interface Review {
@@ -24,7 +24,7 @@ const CATEGORIES: Category[] = [
     reviews: [
       {
         quote:
-          "TASK HABS has made our mornings so much smoother. My kids actually ask to do chores now!",
+          "IMEER has made our mornings so much smoother. My kids actually ask to do chores now!",
         author: "– The Johnson Family (CA)",
         region: "CA",
       },
@@ -84,7 +84,7 @@ const CATEGORIES: Category[] = [
       },
       {
         quote:
-          "I don’t have to juggle calendars anymore; TASK HABS organizes it for me!",
+          "I don’t have to juggle calendars anymore; IMEER organizes it for me!",
         author: "– The García Family (AZ)",
         region: "AZ",
       },

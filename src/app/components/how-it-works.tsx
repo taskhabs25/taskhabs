@@ -24,8 +24,8 @@ const steps = [
     icon: Download,
     title: "Download & Setup",
     description:
-      "Grab TaskHabs from the App Store or Google Play and create your family profile in minutes.",
-    image: "/images/onboarding.png",
+      "Grab IMEER from the App Store or Google Play and create your family profile in minutes.",
+    image: "/images/Login.png",
   },
   {
     icon: UserPlus,
@@ -117,7 +117,7 @@ export default function HowItWorks() {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            How <span className="text-[hsl(var(--brand-playful))]">TASK HABS</span> Works
+            How <span className="text-[hsl(var(--brand-playful))]">IMEER</span> Works
           </h2>
           <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
             Get started in the following steps and transform your family&apos;s daily routine.

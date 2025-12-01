@@ -75,7 +75,7 @@ export default function Header() {
             priority
           /> */}
           <span className="font-bold tracking-tight text-lg leading-none hidden sm:inline-block">
-            TaskHabs
+            I M E E R
           </span>
         </Link>
 

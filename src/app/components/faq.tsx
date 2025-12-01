@@ -5,14 +5,14 @@ import { ChevronDown, HelpCircle } from "lucide-react"
 
 const faqs = [
   {
-    question: "Is TASK HABS free to use?",
+    question: "Is IMEER free to use?",
     answer:
-      "Yes! TASK HABS is completely free to download and use. There are no hidden fees, subscriptions, or in-app purchases required for core functionality.",
+      "Yes! IMEER is completely free to download and use. There are no hidden fees, subscriptions, or in-app purchases required for core functionality.",
   },
   {
-    question: "What ages is TASK HABS suitable for?",
+    question: "What ages is IMEER suitable for?",
     answer:
-      "TASK HABS is designed for children ages 4-16. The interface is intuitive enough for young children while offering features that engage teenagers.",
+      "IMEER is designed for children ages 4-16. The interface is intuitive enough for young children while offering features that engage teenagers.",
   },
   {
     question: "How does the reward system work?",
@@ -20,12 +20,12 @@ const faqs = [
       "Children earn points by completing tasks and maintaining good habits. These points can be redeemed for rewards that you set up, such as extra screen time, special treats, or family activities.",
   },
   {
-    question: "Can I use TASK HABS for multiple children?",
+    question: "Can I use IMEER for multiple children?",
     answer:
-      "TASK HABS supports multiple child profiles within one family account. You can track each child's progress individually and set age-appropriate tasks and rewards.",
+      "IMEER supports multiple child profiles within one family account. You can track each child's progress individually and set age-appropriate tasks and rewards.",
   },
   {
-    question: "Does TASK HABS work offline?",
+    question: "Does IMEER work offline?",
     answer:
       "Yes, most features work offline. Tasks can be completed and progress tracked without an internet connection. Data syncs automatically when you're back online.",
   },
@@ -40,9 +40,9 @@ const faqs = [
       "Yes! You have complete control over creating custom tasks, setting point values, and defining rewards that work best for your family's needs and values.",
   },
   {
-    question: "What devices does TASK HABS work on?",
+    question: "What devices does IMEER work on?",
     answer:
-      "TASK HABS works on iOS and Android smartphones and tablets. We also offer a web version that works on computers and laptops.",
+      "IMEER works on iOS and Android smartphones and tablets. We also offer a web version that works on computers and laptops.",
   },
 ]
 
@@ -69,7 +69,7 @@ export default function FAQ() {
             <span className="text-[hsl(var(--brand-playful))]">Questions</span>
           </h2>
           <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            Got questions? We&apos;ve got answers. Here are the most common questions parents ask about TASK HABS.
+            Got questions? We&apos;ve got answers. Here are the most common questions parents ask about IMEER.
           </p>
         </div>
 

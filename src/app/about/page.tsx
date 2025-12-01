@@ -85,10 +85,10 @@ export default function About() {
         <div className="w-full px-[10%]">
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              About <span className="text-[hsl(var(--brand-playful))]">TaskHabs</span>
+              About <span className="text-[hsl(var(--brand-playful))]">IMEER</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              TaskHabs is built on the <strong>MEER Concept</strong> — Motivate, Educate,
+              IMEER is built on the <strong>MEER Concept</strong> — Motivate, Educate,
               Entertain, Reward — a fun and rewarding way for kids to learn
               responsibility while parents enjoy stress-free parenting.
             </p>
@@ -245,9 +245,9 @@ export default function About() {
                 <CardContent className="relative p-8">
                   <Logo className="w-12 h-12 mx-auto mb-6"/>
                   <blockquote className="text-xl sm:text-2xl font-medium mb-6 italic">
-                    &quot;Every family deserves tools that bring them closer together, not drive them apart. That&apos;s the heart of everything we build at TaskHabs.&quot;
+                    &quot;Every family deserves tools that bring them closer together, not drive them apart. That&apos;s the heart of everything we build at IMEER.&quot;
                   </blockquote>
-                  <p className="text-white/80">— TaskHabs Founding Team</p>
+                  <p className="text-white/80">— IMEER Founding Team</p>
                 </CardContent>
               </Card>
             </div>

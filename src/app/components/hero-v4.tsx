@@ -146,7 +146,7 @@ const handleJoin = async (e: FormEvent) => {
 
         {/* Subhead */}
         <p className="text-lg sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
-          Taskhabs is build on {" "}
+          IMEER is build on {" "}
           <span className="font-semibold text-[hsl(var(--brand-playful))]">
             MOTIVATE, EDUCATE, ENTERTAIN AND REWARD - M.E.E.R
           </span>{" "} <br />

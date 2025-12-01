@@ -54,10 +54,10 @@ export default function Contact() {
               <h3 className="text-lg font-semibold mb-2">Email Support</h3>
               <p className="text-white/80 mb-2">For general questions and support</p>
               <a
-                href="mailto:info@taskhabs.com"
+                href="mailto:info@iMEER.com.au "
                 className="font-medium text-[hsl(var(--brand-pro))] hover:underline"
               >
-                info@taskhabs.com
+                info@iMEER.com.au 
               </a>
             </div>
           </div>
@@ -75,13 +75,13 @@ export default function Contact() {
 
               <div className="flex gap-4 flex-wrap">
                 <a
-                  href="https://www.instagram.com/taskhabs?igsh=b3p0MDd6bHo5aWxu"
+                  href="https://www.instagram.com/imeerapp?igsh=MTFmYTI3N3ltanNxNQ=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 transition"
                 >
                   <Image src="/images/insta.png" alt="Instagram" width={20} height={20} />
-                  <span className="text-sm font-medium">@taskhabs</span>
+                  <span className="text-sm font-medium">@IMEER</span>
                 </a>
 
                 <a
