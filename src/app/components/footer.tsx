@@ -110,7 +110,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  href="https://www.tiktok.com/@taskhabs?_t=ZS-8yEdgoDI3Oi&_r=1"
+                  href="https://www.tiktok.com/@imeerapp?is_from_webapp=1&sender_device=pc"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block hover:opacity-90 transition-opacity"
@@ -122,6 +122,24 @@ export default function Footer() {
                     width={28}
                     height={28}
                   />
+                </Link>
+
+                <Link
+                  href="https://www.facebook.com/profile.php?id=61583722330840"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-90 transition-opacity"
+                  aria-label="IMEER on Facebook"
+                >
+                  <div className="w-7 h-7 rounded-full overflow-hidden">
+                    <Image
+                      src="/images/fb.png"
+                      alt="Facebook"
+                      width={28}
+                      height={28}
+                      className="object-cover"
+                    />
+                  </div>
                 </Link>
               </div>
             </div>

@@ -93,6 +93,25 @@ export default function Contact() {
                   <Image src="/images/tiktok.png" alt="TikTok" width={20} height={20} />
                   <span className="text-sm font-medium">@IMEER</span>
                 </a>
+
+                <a
+                  href="https://www.facebook.com/profile.php?id=61583722330840"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 transition"
+                >
+                  <div className="w-5 h-5 rounded-full overflow-hidden">
+                    <Image
+                      src="/images/fb.png"
+                      alt="Facebook"
+                      width={20}
+                      height={20}
+                      className="object-cover"
+                    />
+                  </div>
+                  <span className="text-sm font-medium">@IMEER</span>
+                </a>
+
               </div>
             </div>
           </div>
