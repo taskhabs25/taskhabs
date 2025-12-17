@@ -8,25 +8,25 @@ import Footer from "@/app/components/footer"
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] })
 
 export const metadata: Metadata = {
-  title: "TASK HABS - Family Task & Habit Management App",
+  title: "IMEER - Family Task & Habit Management App",
   description:
     "Empower your child to build healthy habits while keeping things fun and organized. Reduce screen time by 30% with our family-friendly task management app.",
   keywords: "family app, kids tasks, habit tracking, parenting, screen time, rewards system",
-  authors: [{ name: "TASK HABS Team" }],
-  creator: "TASK HABS",
-  publisher: "TASK HABS",
+  authors: [{ name: "IMEER Team" }],
+  creator: "IMEER",
+  publisher: "IMEER",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://taskhabs.com",
-    title: "TASK HABS - Family Task & Habit Management App",
+    title: "IMEER - Family Task & Habit Management App",
     description: "Empower your child to build healthy habits while keeping things fun and organized.",
-    siteName: "TASK HABS",
+    siteName: "IMEER",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TASK HABS - Family Task & Habit Management App",
+    title: "IMEER - Family Task & Habit Management App",
     description: "Empower your child to build healthy habits while keeping things fun and organized.",
   },
 }
