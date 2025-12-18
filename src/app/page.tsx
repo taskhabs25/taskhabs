@@ -7,7 +7,7 @@ import DownloadCTA from "@/app/components/download-cta"
 import FAQ from "@/app/components/faq"
 
 export const metadata: Metadata = {
-  title: "TASK HABS - Family Task & Habit Management App",
+  title: "IMEER - Family Task & Habit Management App",
   description:
     "Empower your child to build healthy habits while keeping things fun and organized. Reduce screen time by 30% with our family-friendly task management app.",
   keywords: "family app, kids tasks, habit tracking, parenting, screen time, rewards system",

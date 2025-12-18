@@ -91,7 +91,7 @@ export default function DownloadCTA() {
                 <div className="bg-white rounded-[2rem] overflow-hidden">
                   <Image
                     src="/images/home-parent.png"
-                    alt="TASK HABS Home Screen"
+                    alt="IMEER Home Screen"
                     width={300}
                     height={600}
                     className="w-full h-auto"
