@@ -104,7 +104,7 @@ export default function DownloadCTA() {
                 <div className="bg-white rounded-[2rem] overflow-hidden">
                   <Image
                     src="/images/rewards.png"
-                    alt="TASK HABS Rewards Screen"
+                    alt="IMEER Rewards Screen"
                     width={300}
                     height={600}
                     className="w-full h-auto"
