@@ -14,11 +14,17 @@ const termsData = [
     content:
       "By downloading, installing, or using the IMEER application, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our service.",
   },
+  // {
+  //   icon: Users,
+  //   title: "Description of Service",
+  //   content:
+  //     "IMEER is a family task and habit management application designed to help parents and children organize daily routines, track progress, and build positive habits through a reward system.",
+  // },
   {
-    icon: Users,
-    title: "Description of Service",
-    content:
-      "IMEER is a family task and habit management application designed to help parents and children organize daily routines, track progress, and build positive habits through a reward system.",
+  icon: Users,
+    title: "Subscription & Billing",
+content:
+  "IMEER includes a subscription model. New users get a 14-day free trial with full access. After expiry, the family owner must subscribe to continue usage, while child accounts may be restricted. One subscription applies per family, with monthly and annual plans available via the app.",
   },
   {
     icon: Shield,
