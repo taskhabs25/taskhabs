@@ -148,10 +148,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8">
+        <p>247+ families on the waitlist · Launching soon on iOS & Android</p>
           <div className="flex flex-col sm:flex-row justify-between items-center">
+            
             <p className="text-white/70 leading-relaxed">
               © 2026 iMEER by TaskHabs. All rights reserved.
             </p>
+            
             <div className="flex space-x-6 mt-4 sm:mt-0">
               <Link href="/terms" className="text-white/70 leading-relaxed hover:text-white transition-colors">
                 Terms
