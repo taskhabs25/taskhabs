@@ -8,9 +8,10 @@ import Footer from "@/app/components/footer"
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] })
 
 export const metadata: Metadata = {
-  title: "IMEER - Family Task & Habit Management App",
+  title: "iMEER — Kids Tasks, MeerCoins & Family Rewards | Australia",
+  metadataBase: new URL("https://imeer.com.au"),
   description:
-    "Empower your child to build healthy habits while keeping things fun and organized. Reduce screen time by 30% with our family-friendly task management app.",
+    "iMEER turns everyday chores, homework and habits into real money your children earn. Build your Guardian Circle — parents, grandparents, aunties and uncles all rewarding your child together. Launching on iOS & Android. Join the waitlist.",
   keywords: "family app, kids tasks, habit tracking, parenting, screen time, rewards system",
   authors: [{ name: "IMEER Team" }],
   creator: "IMEER",
@@ -19,15 +20,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://taskhabs.com",
-    title: "IMEER - Family Task & Habit Management App",
-    description: "Empower your child to build healthy habits while keeping things fun and organized.",
+    url: "https://imeer.com.au",
+    title: "iMEER — Kids Tasks, MeerCoins & Family Rewards | Australia",
+    description: "iMEER turns everyday chores, homework and habits into real money your children earn. Build your Guardian Circle — parents, grandparents, aunties and uncles all rewarding your child together. Launching on iOS & Android. Join the waitlist.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "iMEER - Kids Tasks & Family Rewards",
+      },
+    ],
     siteName: "IMEER",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IMEER - Family Task & Habit Management App",
-    description: "Empower your child to build healthy habits while keeping things fun and organized.",
+    title: "iMEER — Kids Tasks, MeerCoins & Family Rewards | Australia",
+    description: "iMEER turns everyday chores, homework and habits into real money your children earn. Build your Guardian Circle — parents, grandparents, aunties and uncles all rewarding your child together. Launching on iOS & Android. Join the waitlist.",
+    images: ["/og-image.png"],
   },
 }
 

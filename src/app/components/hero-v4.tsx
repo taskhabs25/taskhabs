@@ -113,6 +113,18 @@ const handleJoin = async (e: FormEvent) => {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        {/* Launch Badge */}
+        <div className="mb-6 flex justify-center">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+            <span className="relative flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400" />
+            </span>
+            <span className="text-sm sm:text-base font-semibold text-white/95">
+              🚀 Launching Soon · Australia&apos;s First Family Reward Platform
+            </span>
+          </div>
+        </div>
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 mb-4 backdrop-blur-sm">
           <Logo className="h-6 w-auto" />
@@ -120,7 +132,7 @@ const handleJoin = async (e: FormEvent) => {
             M.E.E.R
           </span>
         </div>
-
+        
         {/* Messaging Pills */}
         <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-16 text-sm">
           <div className="pill-parent">
@@ -139,20 +151,29 @@ const handleJoin = async (e: FormEvent) => {
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 max-w-5xl mx-auto">
-          Guide Better Habits <br className="hidden sm:block" />
+          {/* Guide Better Habits <br className="hidden sm:block" />
           {" "}
-          <span className="text-[hsl(var(--brand-playful))]">With M.E.E.R</span>
+          <span className="text-[hsl(var(--brand-playful))]">With M.E.E.R</span> */}
+          Turn your child's daily tasks into real money they earn.
         </h1>
 
         {/* Subhead */}
-        <p className="text-lg sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
-          IMEER is build on {" "}
+        <p className="text-lg sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+          It takes a village to raise a child — and {" "}
           <span className="font-semibold text-[hsl(var(--brand-playful))]">
-            MOTIVATE, EDUCATE, ENTERTAIN AND REWARD - M.E.E.R
-          </span>{" "} <br />
-          A fun and rewarding way for kids to learn responsibility 
-          while parents enjoy stress free parenting.
-
+            iMEER brings your whole village together
+          </span>.
+          <br /><br />
+          Grandparents, aunties, uncles, and older siblings all contribute{" "}
+          <span className="font-semibold text-[hsl(var(--brand-playful))]">
+            MeerCoins
+          </span>{" "}
+          to reward your children for completing chores, homework, and daily habits.
+          <br />
+          Because raising a great child is a{" "}
+          <span className="font-semibold text-[hsl(var(--brand-playful))]">
+            family effort
+          </span>.
         </p>
 
         
@@ -179,29 +200,32 @@ const handleJoin = async (e: FormEvent) => {
             />
             <button
               type="submit"
-              className="mt-2 sm:mt-0 px-6 py-3 rounded-full bg-[hsl(var(--brand-playful))] text-white font-semibold hover:brightness-110 transition relative overflow-hidden"
+              className="mt-2 sm:mt-0 px-6 py-3 rounded-full text-white font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-orange-400 via-pink-500 to-pink-600 shadow-[0_10px_30px_rgba(236,72,153,0.4)] hover:scale-[1.02] hover:brightness-110"
             >
-              <span className="relative z-10">Join Waitlist</span>
-              {/* subtle “shine” on hover */}
-              <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-30 transition-opacity rounded-full" />
+              <span className="relative z-10">🚀 Join the Waitlist</span>
+              <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-20 transition-opacity rounded-full" />
             </button>
           </div>
         </form>
 
         {/* Primary CTAs */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-          <Button
-            variant="secondary"
-            className="secondary-btn-lg"
+
+          {/* Button 2 — See How It Works */}
+          <button
             onClick={() =>
               document
                 .getElementById("how-it-works")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
+            className="px-8 py-4 rounded-full font-semibold text-white text-lg 
+            border border-white/30 bg-transparent 
+            hover:bg-white/10 transition-all duration-300"
           >
-            <Play className="w-5 h-5 mr-2" />
+            <Play className="w-5 h-5 mr-2 inline-block" />
             See How It Works
-          </Button>
+          </button>
+
         </div>
 
         
@@ -216,8 +240,8 @@ const handleJoin = async (e: FormEvent) => {
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div className={`stats-counter ${statsVisible ? "opacity-100" : "opacity-0"}`}>
-                  <p className="hero-title text-3xl font-bold">10K+</p>
-                  <p className="hero-description text-sm">Happy Families</p>
+                  <p className="hero-title text-3xl font-bold">247+</p>
+                  <p className="hero-description text-sm">Families on the Waitlist</p>
                 </div>
               </div>
               <div className="hero-card rounded-2xl p-6 text-center">
@@ -225,8 +249,8 @@ const handleJoin = async (e: FormEvent) => {
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <div className={`stats-counter ${statsVisible ? "opacity-100" : "opacity-0"}`}>
-                  <p className="hero-title text-3xl font-bold">4.9★</p>
-                  <p className="hero-description text-sm">App Store Rating</p>
+                  {/* <p className="hero-title text-3xl font-bold">4.9★</p> */}
+                  <p className="hero-description text-sm">Launching on iOS & Android</p>
                 </div>
               </div>
             </div>

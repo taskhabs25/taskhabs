@@ -4,7 +4,7 @@ import { useState, MouseEvent } from "react"
 import Link from "next/link"
 // import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
-import { Menu, X, DownloadCloud } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
 import { Logo } from "@/app/components/logo"
 
@@ -15,15 +15,17 @@ const APP_STORE_URL = "#appstore"
 const HOME_ANCHORS = [
   { id: "features", label: "Features" },
   { id: "how-it-works", label: "How It Works" },
-  { id: "testimonials", label: "Reviews" },
+  //{ id: "testimonials", label: "Reviews" },
   { id: "faq", label: "FAQs" },
 ]
 
 const ROUTE_ITEMS = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
-  { href: "/reviews", label: "Reviews" },
+  //{ href: "/reviews", label: "Reviews" },
 ]
+
+const WAITLIST_ID = "hero"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -109,13 +111,11 @@ export default function Header() {
             </Link>
           ))}
 
-          {/* Always show Download */}
           <Button
             className="header-download-btn"
-            onClick={() => openStore(APP_STORE_URL)}
+            onClick={(e) => handleAnchorClick(e, WAITLIST_ID)}
           >
-            <DownloadCloud className="w-4 h-4 mr-2" />
-            Download
+            Join Waitlist
           </Button>
         </nav>
 
@@ -161,16 +161,12 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Always show Download */}
             <div className="mt-4">
               <Button
                 className="header-download-btn w-full"
-                onClick={() => {
-                  close()
-                  openStore(APP_STORE_URL)
-                }}
+                onClick={(e) => handleAnchorClick(e, WAITLIST_ID)}
               >
-                Download App
+                Join Waitlist
               </Button>
             </div>
           </nav>

@@ -1,7 +1,9 @@
+"use client"
 import Image from "next/image"
-//import Link from "next/link"
-import { Star } from "lucide-react"
+// import Link from "next/link"
+import { Star, Lock } from "lucide-react"
 import { Logo } from "@/app/components/logo"
+import Flag from "react-world-flags"
 
 const APP_STORE_URL = "/" // TODO: real link
 const PLAY_STORE_URL = "/" // TODO: real link
@@ -14,78 +16,106 @@ export default function DownloadCTA() {
     >
       <div className="w-full px-[10%]">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          
           {/* Content */}
           <div className="text-center lg:text-left relative z-10">
             <Logo className="w-25 mx-auto lg:mx-0 mb-4" />
+
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Ready to <span className="text-[hsl(var(--brand-playful))]">Transform</span> Your Family&apos;s Routine?
+              Your village is waiting. Build it with{" "}
+              <span className="text-[hsl(var(--brand-playful))]">
+                iMEER
+              </span>.
             </h2>
+
             <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Join thousands of families who have already discovered the joy of organized, motivated kids.
+              Join our waitlist today and be the first to know when iMEER launches on iOS and
+              Android. Early waitlist families get priority access.
             </p>
 
             {/* Benefits */}
             <div className="grid sm:grid-cols-2 gap-4 mb-8 text-white/80 text-base">
               <div className="flex items-center justify-center lg:justify-start">
-                <Star className="w-5 h-5 text-yellow-400 mr-2 fill-current" />
-                <span>Free to download</span>
+                <span>✅ 14-day free trial</span>
               </div>
+
               <div className="flex items-center justify-center lg:justify-start">
-                <Star className="w-5 h-5 text-yellow-400 mr-2 fill-current" />
-                <span>Works on all devices</span>
+                <span>🔒 Parent-controlled always</span>
               </div>
+
               <div className="flex items-center justify-center lg:justify-start">
-                <Star className="w-5 h-5 text-yellow-400 mr-2 fill-current" />
-                <span>No ads or subscriptions</span>
+                <span>📱 iOS & Android</span>
               </div>
+
               <div className="flex items-center justify-center lg:justify-start">
-                <Star className="w-5 h-5 text-yellow-400 mr-2 fill-current" />
-                <span>Safe for kids</span>
+                <span>🛡️ Safe for children 4-17</span>
+              </div>
+
+              <div className="flex items-center justify-center lg:justify-start gap-2">
+                <Flag code="AU" style={{ width: 20, height: 20 }} />
+                <span>Built in Australia</span>
               </div>
             </div>
 
-            {/* Store Buttons */}
+            {/* Store Buttons (currently disabled) */}
+            {/*
             <div
-                      id="cta"
-                      className="mt-20 flex flex-col sm:flex-row justify-center items-center gap-4 lg:justify-start lg:items-start">
-                      {/* App Store Badge */}
-                      <a
-                        href={APP_STORE_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Image
-                          src="/images/apple_logo_white.svg"
-                          alt="Download on the App Store"
-                          width={200}   // adjust to match Apple’s official ratio
-                          height={70}
-                          className="hover:opacity-90 transition-opacity"
-                        />
-                      </a>
-            
-                      {/* Play Store Badge */}
-                      <a
-                        href={PLAY_STORE_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Image
-                          src="/images/playstore_logo.png"
-                          alt="Get it on Google Play"
-                          width={200}   // adjust as needed
-                          height={70}
-                          className="hover:opacity-90 transition-opacity"
-                        />
-                      </a>
-                    </div>
+              id="cta"
+              className="mt-20 flex flex-col sm:flex-row justify-center items-center gap-4 lg:justify-start lg:items-start"
+            >
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Image
+                  src="/images/apple_logo_white.svg"
+                  alt="Download on the App Store"
+                  width={200}
+                  height={70}
+                  className="hover:opacity-90 transition-opacity"
+                />
+              </a>
+
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Image
+                  src="/images/playstore_logo.png"
+                  alt="Get it on Google Play"
+                  width={200}
+                  height={70}
+                  className="hover:opacity-90 transition-opacity"
+                />
+              </a>
+            </div>
+            */}
+
+            {/* Button 1 — Join the Waitlist */}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("hero")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="relative px-8 py-4 rounded-full font-semibold text-white text-lg 
+              bg-gradient-to-r from-orange-400 via-pink-500 to-pink-600 
+              shadow-[0_10px_30px_rgba(236,72,153,0.4)] 
+              hover:scale-[1.03] hover:brightness-110 transition-all duration-300 overflow-hidden"
+            >
+              <span className="relative z-10">🚀 Join the Waitlist</span>
+              <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-20 transition rounded-full" />
+            </button>
           </div>
 
           {/* App Screenshots */}
           <div className="flex justify-center lg:justify-end">
-            {/* group for hover pop */}
             <div className="relative group download-cta-phones">
+              
               {/* Main Phone */}
               <div className="bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-2">
                 <div className="bg-white rounded-[2rem] overflow-hidden">
@@ -99,7 +129,7 @@ export default function DownloadCTA() {
                 </div>
               </div>
 
-              {/* Secondary Phone (Partially Visible) */}
+              {/* Secondary Phone */}
               <div className="absolute -right-16 top-8 bg-gray-900 rounded-[2.5rem] p-2 shadow-xl opacity-80 scale-75 transition-transform duration-300 ease-out group-hover:scale-90 group-hover:-translate-y-1 group-hover:translate-x-3">
                 <div className="bg-white rounded-[2rem] overflow-hidden">
                   <Image
@@ -119,12 +149,14 @@ export default function DownloadCTA() {
               >
                 <Star className="w-4 h-4 text-yellow-800 fill-current" />
               </div>
+
               <div
                 aria-hidden="true"
                 className="absolute -bottom-4 right-4 w-6 h-6 bg-yellow-300 rounded-full shadow-lg transition-transform duration-300 ease-out group-hover:scale-125 group-hover:translate-y-1"
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>

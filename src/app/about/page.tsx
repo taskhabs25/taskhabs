@@ -15,11 +15,11 @@ import {
   TrendingUp,
 } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "About Us - IMEER",
-  description:
-    "Learn about our mission to help families build healthy habits and create positive routines together.",
-}
+// export const metadata: Metadata = {
+//   title: "About Us - IMEER",
+//   description:
+//     "Learn about our mission to help families build healthy habits and create positive routines together.",
+// }
 
 /* Values */
 const values = [

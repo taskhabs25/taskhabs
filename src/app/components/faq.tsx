@@ -7,17 +7,22 @@ const faqs = [
   {
     question: "Is IMEER free to use?",
     answer:
-      "Yes! IMEER is completely free to download and use. There are no hidden fees, subscriptions, or in-app purchases required for core functionality.",
+      " iMEER offers a 14-day free trial with full access — no credit card required during the trial. After your trial, continue with our Monthly plan at $4.99/month or save with the Annual plan at $49.99/year ($4.17/month). One subscription covers your entire family — all children included.",
   },
   {
     question: "What ages is IMEER suitable for?",
     answer:
-      "IMEER is designed for children ages 4-16. The interface is intuitive enough for young children while offering features that engage teenagers.",
+      " iMEER is designed for children aged 4 to 17. The app adapts to each child's age — younger children (4–7) have simpler task flows and larger visual elements, while teenagers (13–17) have access to more advanced financial literacy features including the Spend, Save and Share wallet tabs.",
+  },
+  {
+    question: "Can extended family contribute?",
+    answer: 
+      "Yes — this is one of iMEER's most unique features. The Guardian Circle allows grandparents, aunties, uncles and older siblings to contribute MeerCoins to a child's wallet and send personal messages of encouragement. Extended family members do not need to install the app — they simply receive a link, tap it, and send their contribution. No matter where your family is in the world, everyone can be part of your child's village."
   },
   {
     question: "How does the reward system work?",
     answer:
-      "Children earn points by completing tasks and maintaining good habits. These points can be redeemed for rewards that you set up, such as extra screen time, special treats, or family activities.",
+      "Children earn MeerCoins for completing tasks assigned by a parent or guardian. Each task has a coin value set by the parent. When a child completes a task and uploads photo proof, the parent reviews and approves — coins are then added to the child's wallet. Children can redeem MeerCoins for real money, screen time, outings, treats, or save toward a bigger goal. The parent approves every redemption.",
   },
   {
     question: "Can I use IMEER for multiple children?",

@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/70 leading-relaxed">
-              Empowering families to build healthy habits and create positive routines together.
+              It takes a village to raise a child. iMEER brings yours together.
             </p>
           </div>
 
@@ -150,7 +150,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-white/70 leading-relaxed">
-              © 2025 IMEER. All rights reserved.
+              © 2026 iMEER by TaskHabs. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 sm:mt-0">
               <Link href="/terms" className="text-white/70 leading-relaxed hover:text-white transition-colors">

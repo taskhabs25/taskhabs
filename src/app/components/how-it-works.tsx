@@ -4,13 +4,13 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/app/components/ui/card"
 import {
-  Download,
-  UserPlus,
-  Trophy,
-  Home,
+  Mail,
+  Users,
+  ClipboardList,
+  Timer,
   CheckCircle2,
   Wallet,
-  Gift as GiftIcon,
+  Gift,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react"
@@ -21,53 +21,53 @@ import {
    ------------------------------------------------------------------ */
 const steps = [
   {
-    icon: Download,
-    title: "Download & Setup",
+    icon: Mail,
+    title: "Join the Waitlist",
     description:
-      "Grab IMEER from the App Store or Google Play and create your family profile in minutes.",
+      "Enter your email at imeer.com.au to secure your spot. You will be the first to know when iMEER launches on iOS and Android.",
     image: "/images/Login.png",
   },
   {
-    icon: UserPlus,
-    title: "Add Tasks & Rewards",
+    icon: Users,
+    title: "Set Up Your Family",
     description:
-      "Create custom chores, habits, and rewards that motivate your kids.",
+      "Add each child's profile — name, age, and avatar. Your whole family is set up in under 5 minutes",
+    image: "/images/screen-2.png",
+  },
+  {
+    icon: ClipboardList,
+    title: "Assign Tasks",
+    description:
+      "Create tasks for each child — chores, homework, habits, and life skills. Set the MeerCoin reward, due time, and whether it repeats daily or weekly.",
     image: "/images/create-task.png",
   },
   {
-    icon: Trophy,
-    title: "Track & Celebrate",
+    icon: Timer,
+    title: "Children Complete & Earn",
     description:
-      "See progress and earned rewards in one place—celebrate wins together!",
-    image: "/images/rewards.png",
-  },
-  {
-    icon: Home,
-    title: "Kid Home Screen",
-    description:
-      "Kids see today’s to‑dos, points, and their playful mascot buddy.",
-    image: "/images/home-child.png",
+      "Children see their task list on their own device. The countdown timer keeps them focused. When done, they upload a photo and mark it complete — earning MeerCoins instantly.",
+    image: "/images/screen-4.png",
   },
   {
     icon: CheckCircle2,
-    title: "Complete a Task",
+    title: "You Review & Approve",
     description:
-      "Kids tap a task, mark it done, and send for parent approval.",
-    image: "/images/task.png",
+      "You review the photo proof and approve the task. MeerCoins are only awarded after your approval — you stay in control at every step.",
+    image: "/images/screen-5.png",
   },
   {
     icon: Wallet,
-    title: "Earn & Track Points",
-    description:
-      "Approved tasks convert to points—watch balances grow in the wallet.",
-    image: "/images/wallet.png",
-  },
-  {
-    icon: GiftIcon,
     title: "Redeem Rewards",
     description:
-      "Trade points for screen time, treats, or custom family rewards.",
-    image: "/images/reward-2.png",
+      "Children browse the Rewards Shop and request what they want — real money, screen time, outings, ice cream treats, or savings toward something bigger. You approve every redemption.",
+    image: "/images/screen-6.png",
+  },
+  {
+    icon: Gift,
+    title: "Invite Your Village",
+    description:
+      "Invite grandparents, aunties, uncles and older siblings to your Guardian Circle. They contribute MeerCoins and send encouragement — no app install required. Your village is complete.",
+    image: "/images/screen-7.png",
   },
 ]
 
@@ -147,13 +147,23 @@ export default function HowItWorks() {
           {/* Outgoing step (animates out) */}
           {prevStep && (
             <div className={`hiw-step-anim ${exitClass}`}>
-              <StepContent step={prevStep} stepNumber={prevIndex! + 1} />
+              {/* <StepContent step={prevStep} stepNumber={prevIndex! + 1} /> */}
+              <StepContent
+                step={prevStep}
+                stepNumber={prevIndex! + 1}
+                isWaitlistCard={prevStep.title === "Join the Waitlist"}
+              />
             </div>
           )}
 
           {/* Current step (animates in if transitioning) */}
           <div className={prevStep ? enterClass : ""}>
-            <StepContent step={currentStep} stepNumber={index + 1} />
+            {/* <StepContent step={currentStep} stepNumber={index + 1} /> */}
+            <StepContent
+              step={currentStep}
+              stepNumber={index + 1}
+              isWaitlistCard={currentStep.title === "Join the Waitlist"}
+            />
           </div>
         </div>
 
@@ -188,6 +198,7 @@ export default function HowItWorks() {
 function StepContent({
   step,
   stepNumber,
+  isWaitlistCard = false,
 }: {
   step: {
     icon: any
@@ -196,6 +207,8 @@ function StepContent({
     image: string
   }
   stepNumber: number
+  isWaitlistCard?: boolean
+
 }) {
   const Icon = step.icon
   return (
@@ -221,7 +234,21 @@ function StepContent({
       </div>
 
       {/* Content Card */}
-      <Card className="bg-white/5 border border-white/10 shadow-lg rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 min-h-[160px] flex">
+      <Card
+        onClick={
+          isWaitlistCard
+            ? () =>
+                document
+                  .getElementById("hero")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+            : undefined
+        }
+        className={`bg-white/5 border border-white/10 shadow-lg rounded-2xl min-h-[160px] flex transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 ${
+          isWaitlistCard
+            ? "cursor-pointer hover:shadow-2xl"
+            : "hover:shadow-xl"
+        }`}
+      >
         <CardContent className="p-6 flex flex-col justify-center w-full">
           <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
             <Icon className="w-6 h-6 text-white" />

@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/app/components/ui/card"
 import {
   Monitor,
-  Gift,
+  Wallet,
   Clock,
   Bell,
   Users,
-  Target,
+  Camera,
   Smartphone,
   Award,
 } from "lucide-react"
@@ -19,10 +19,10 @@ const features = [
       "Monitor and manage your child's device usage with smart controls and healthy limits.",
   },
   {
-    icon: Gift,
-    title: "Reward System",
+    icon: Wallet,
+    title: "MeerCoin Wallet",
     description:
-      "Motivate kids with points and rewards for completing tasks and building good habits.",
+      "Children earn MeerCoins for every completed task. Their wallet shows their real-time balance, earning history, and dollar value — turning pocket money into a genuine learning moment.",
   },
   {
     icon: Clock,
@@ -43,22 +43,22 @@ const features = [
       "Track progress for multiple children with a comprehensive family overview.",
   },
   {
-    icon: Target,
-    title: "Goal Tracking",
+    icon: Camera,
+    title: "Photo Proof",
     description:
-      "Set and achieve meaningful goals together as a family with visual progress tracking.",
+      "Children upload a photo when they complete a task. You review it and approve before MeerCoins are awarded. Accountability is built into every single task.",
   },
   {
-    icon: Smartphone,
-    title: "Mobile Friendly",
+    icon: Users,
+    title: "Guardian Circle",
     description:
-      "Works perfectly on all devices - phones, tablets, and computers.",
+      "Grandparents, aunties, uncles and older siblings join your Guardian Circle and contribute MeerCoins with a personal message — no app install required for extended family.",
   },
   {
-    icon: Award,
-    title: "Achievement System",
+    icon: Clock,
+    title: "Countdown Timer",
     description:
-      "Celebrate milestones and build confidence with badges and achievements.",
+      "Every task has a live countdown timer that shifts from green to orange to red as time runs out — keeping children focused and on track without a single reminder from you.",
   },
 ]
 
@@ -101,7 +101,6 @@ export default function Features() {
             return (
               <Card
                 key={index}
-                /* same sizing/shape classes you had; added dark bg + subtle border */
                 className="border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl transform hover:-translate-y-2 hover:scale-105"
               >
                 <CardContent className="p-6 text-center">
