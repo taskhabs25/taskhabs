@@ -36,6 +36,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/pricing" className="text-white/70 hover:text-white transition-colors">
+                  Pricing
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-white/70 hover:text-white transition-colors">
                   Contact
                 </Link>
@@ -83,16 +88,13 @@ export default function Footer() {
                 <Mail className="w-4 h-4 mr-3 text-[hsl(var(--brand-pro))]" />
                 <span>info@iMEER.com.au </span>
               </li>
-              {/* Phone removed as requested */}
               <li className="flex items-center">
                 <MapPin className="w-4 h-4 mr-3 text-[hsl(var(--brand-pro))]" />
                 <span>Sydney, Australia</span>
               </li>
             </ul>
 
-            {/* Socials */}
             <div className="mt-6">
-              {/* <h4 className="text-sm font-semibold mb-3 text-white/80 uppercase tracking-wide">Follow Us</h4> */}
               <div className="flex items-center gap-4">
                 <Link
                   href="https://www.instagram.com/imeerapp?igsh=MTFmYTI3N3ltanNxNQ=="
@@ -148,13 +150,12 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8">
-        <p>247+ families on the waitlist · Launching soon on iOS & Android</p>
+          <p>247+ families on the waitlist · Launching soon on iOS & Android</p>
           <div className="flex flex-col sm:flex-row justify-between items-center">
-            
             <p className="text-white/70 leading-relaxed">
               © 2026 iMEER by TaskHabs. All rights reserved.
             </p>
-            
+
             <div className="flex space-x-6 mt-4 sm:mt-0">
               <Link href="/terms" className="text-white/70 leading-relaxed hover:text-white transition-colors">
                 Terms
