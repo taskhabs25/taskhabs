@@ -339,8 +339,8 @@ const handleJoin = async (e: FormEvent) => {
                   <Star className="w-6 h-6 text-white" />
                 </div>
                 <div className={`stats-counter ${statsVisible ? "opacity-100" : "opacity-0"}`}>
-                  <p className="hero-title text-3xl font-bold">95%</p>
-                  <p className="hero-description text-sm">Task Completion</p>
+                  {/* <p className="hero-title text-3xl font-bold">95%</p> */}
+                  <p className="hero-description text-sm">Helps kids stay more consistent with daily tasks</p>
                 </div>
               </div>
             </div>
