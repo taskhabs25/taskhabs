@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "Can extended family contribute?",
     answer: 
-      "Yes — this is one of iMEER's most unique features. The Guardian Circle allows grandparents, aunties, uncles and older siblings to contribute MeerCoins to a child's wallet and send personal messages of encouragement. Extended family members do not need to install the app — they simply receive a link, tap it, and send their contribution. No matter where your family is in the world, everyone can be part of your child's village."
+      "Yes — this is one of iMEER's most unique features. The Guardian Circle allows grandparents, aunties, uncles and older siblings to contribute MeerCoins to a child's wallet and send personal messages of encouragement. They simply receive a link, tap it, and send their contribution. No matter where your family is in the world, everyone can be part of your child's village."
   },
   {
     question: "How does the reward system work?",

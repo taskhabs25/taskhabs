@@ -12,7 +12,7 @@ export default function VillageSection() {
       emoji: "👵👴",
       title: "Grandparents",
       description:
-        "No app install needed. Grandparents receive a simple link, tap it, and send MeerCoins to their grandchild with a personal message. Distance is no barrier to being part of the village.",
+        "Grandparents receive a simple link, tap it, and send MeerCoins to their grandchild with a personal message. Distance is no barrier to being part of the village.",
     },
     {
       emoji: "👩‍🦰👨",

@@ -73,7 +73,7 @@ const storySteps = [
     icon: TrendingUp,
     title: "The Impact",
     content:
-      "Today, thousands of families use IMEER to create more organized, positive, and connected home environments. We're proud to be part of their journey and committed to continuously improving our platform based on their feedback and needs.",
+      "A calmer home.More helping hands.Children learning responsibility.Families working together.That’s the kind of impact iMEER aims to create every day.",
   },
 ]
 
