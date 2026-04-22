@@ -250,7 +250,8 @@ const handleJoin = async (e: FormEvent) => {
                 </div>
                 <div className={`stats-counter ${statsVisible ? "opacity-100" : "opacity-0"}`}>
                   {/* <p className="hero-title text-3xl font-bold">4.9★</p> */}
-                  <p className="hero-description text-sm">Launching on iOS & Android</p>
+                  {/* <p className="hero-description text-sm">Launching on iOS & Android</p> */}
+                  <p className="hero-description text-sm">Available on iOS</p>
                 </div>
               </div>
             </div>
