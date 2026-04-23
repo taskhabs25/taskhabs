@@ -12,7 +12,7 @@ const faqs = [
   {
     question: "What ages is IMEER suitable for?",
     answer:
-      " iMEER is designed for children aged 4 to 17. The app adapts to each child's age — younger children (4–7) have simpler task flows and larger visual elements, while teenagers (13–17) have access to more advanced financial literacy features including the Spend, Save and Share wallet tabs.",
+      "iMEER is designed for children aged 4 to 17, with a simple and intuitive experience that works across all ages. It helps kids stay consistent with tasks, routines, and rewards in a way that’s easy to understand and use.",
   },
   {
     question: "Can extended family contribute?",
