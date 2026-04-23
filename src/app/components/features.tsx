@@ -52,7 +52,7 @@ const features = [
     icon: Users,
     title: "Guardian Circle",
     description:
-      "Grandparents, aunties, uncles and older siblings join your Guardian Circle and contribute MeerCoins with a personal message — no app install required for extended family.",
+      "Grandparents, aunties, uncles and older siblings join your Guardian Circle and contribute MeerCoins with a personal message.",
   },
   {
     icon: Clock,

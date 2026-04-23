@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "What devices does IMEER work on?",
     answer:
-      "IMEER works on iOS and Android smartphones and tablets. We also offer a web version that works on computers and laptops.",
+      "IMEER works on iOS and Android smartphones and tablets.",
   },
 ]
 

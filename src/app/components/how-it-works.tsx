@@ -66,7 +66,7 @@ const steps = [
     icon: Gift,
     title: "Invite Your Village",
     description:
-      "Invite grandparents, aunties, uncles and older siblings to your Guardian Circle. They contribute MeerCoins and send encouragement — no app install required. Your village is complete.",
+      "Invite grandparents, aunties, uncles and older siblings to your Guardian Circle. They contribute MeerCoins and send encouragement. Your village is complete.",
     image: "/images/screen-7.png",
   },
 ]

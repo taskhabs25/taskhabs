@@ -73,7 +73,7 @@ const storySteps = [
     icon: TrendingUp,
     title: "The Impact",
     content:
-      "A calmer home.More helping hands.Children learning responsibility.Families working together.That’s the kind of impact iMEER aims to create every day.",
+      "A calmer home. More helping hands. Children learning responsibility. Families working together. That’s the kind of impact iMEER aims to create every day.",
   },
 ]
 
