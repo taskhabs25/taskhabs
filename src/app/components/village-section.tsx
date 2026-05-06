@@ -84,8 +84,8 @@ export default function VillageSection() {
             type="button"
             onClick={() =>
               document
-                .getElementById("hero")
-                ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                .getElementById("cta")
+                ?.scrollIntoView({ behavior: "smooth", block: "center" })
             }
             className="rounded-full px-8 py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-orange-400 via-pink-500 to-pink-600 shadow-[0_10px_30px_rgba(236,72,153,0.4)] hover:scale-[1.02] hover:brightness-110 transition-all duration-300"
           >

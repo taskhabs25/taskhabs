@@ -22,9 +22,9 @@ import {
 const steps = [
   {
     icon: Mail,
-    title: "Join the Waitlist",
+    title: "Download the App",
     description:
-      "Enter your email at imeer.com.au to secure your spot. You will be the first to know when iMEER launches on iOS and Android.",
+      "Get started with iMEER today. Download the app on iOS or Android and begin building habits, responsibility, and motivation at home.",
     image: "/images/Login.png",
   },
   {
@@ -151,7 +151,7 @@ export default function HowItWorks() {
               <StepContent
                 step={prevStep}
                 stepNumber={prevIndex! + 1}
-                isWaitlistCard={prevStep.title === "Join the Waitlist"}
+                isWaitlistCard={prevStep.title === "Download the App"}
               />
             </div>
           )}
@@ -162,7 +162,7 @@ export default function HowItWorks() {
             <StepContent
               step={currentStep}
               stepNumber={index + 1}
-              isWaitlistCard={currentStep.title === "Join the Waitlist"}
+              isWaitlistCard={currentStep.title === "Download the App"}
             />
           </div>
         </div>
@@ -239,8 +239,8 @@ function StepContent({
           isWaitlistCard
             ? () =>
                 document
-                  .getElementById("hero")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                  .getElementById("cta")
+                  ?.scrollIntoView({ behavior: "smooth", block: "center" })
             : undefined
         }
         className={`bg-white/5 border border-white/10 shadow-lg rounded-2xl min-h-[160px] flex transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 ${

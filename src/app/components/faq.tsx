@@ -29,11 +29,11 @@ const faqs = [
     answer:
       "IMEER supports multiple child profiles within one family account. You can track each child's progress individually and set age-appropriate tasks and rewards.",
   },
-  {
-    question: "Does IMEER work offline?",
-    answer:
-      "Yes, most features work offline. Tasks can be completed and progress tracked without an internet connection. Data syncs automatically when you're back online.",
-  },
+  // {
+  //   question: "Does IMEER work offline?",
+  //   answer:
+  //     "Yes, most features work offline. Tasks can be completed and progress tracked without an internet connection. Data syncs automatically when you're back online.",
+  // },
   {
     question: "How secure is my family's data?",
     answer:

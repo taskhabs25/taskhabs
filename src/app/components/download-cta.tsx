@@ -29,8 +29,7 @@ export default function DownloadCTA() {
             </h2>
 
             <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Join our waitlist today and be the first to know when iMEER launches on iOS and
-              Android. Early waitlist families get priority access.
+              Get started with iMEER today. Download the app on iOS or Android and begin building habits, responsibility, and motivation at home.
             </p>
 
             {/* Benefits */}
@@ -99,15 +98,15 @@ export default function DownloadCTA() {
             <button
               onClick={() =>
                 document
-                  .getElementById("hero")
-                  ?.scrollIntoView({ behavior: "smooth" })
+                  .getElementById("cta")
+                  ?.scrollIntoView({ behavior: "smooth" , block: "center"})
               }
               className="relative px-8 py-4 rounded-full font-semibold text-white text-lg 
               bg-gradient-to-r from-orange-400 via-pink-500 to-pink-600 
               shadow-[0_10px_30px_rgba(236,72,153,0.4)] 
               hover:scale-[1.03] hover:brightness-110 transition-all duration-300 overflow-hidden"
             >
-              <span className="relative z-10">🚀 Join the Waitlist</span>
+              <span className="relative z-10">🚀 Download the App</span>
               <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-20 transition rounded-full" />
             </button>
           </div>

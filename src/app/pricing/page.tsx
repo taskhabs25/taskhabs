@@ -94,7 +94,7 @@ function PlanCard({
                 : "bg-[hsl(var(--brand-pro))] text-white hover:bg-[hsl(var(--brand-pro))]/90",
             ].join(" ")}
           >
-            <Link href="/#hero">{ctaLabel}</Link>
+            <Link href="/#cta">{ctaLabel}</Link>
           </Button>
         </div>
       </CardContent>
@@ -169,7 +169,7 @@ export default function PricingPage() {
 
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="rounded-xl bg-[hsl(var(--brand-playful))] px-8 text-black hover:bg-[hsl(var(--brand-playful))]/90">
-                <Link href="/#hero">Start Free Trial</Link>
+                <Link href="/#cta">Start Free Trial</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-xl border-white/20 bg-white/5 px-8 text-white hover:bg-white/10 hover:text-white">
                 <Link href="/contact">Ask a Question</Link>

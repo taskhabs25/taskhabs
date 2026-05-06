@@ -116,7 +116,7 @@ export default function Header() {
             className="header-download-btn"
             onClick={(e) => handleAnchorClick(e, WAITLIST_ID)}
           >
-            Join Waitlist
+            Download
           </Button>
         </nav>
 
@@ -167,7 +167,7 @@ export default function Header() {
                 className="header-download-btn w-full"
                 onClick={(e) => handleAnchorClick(e, WAITLIST_ID)}
               >
-                Join Waitlist
+                Download
               </Button>
             </div>
           </nav>
