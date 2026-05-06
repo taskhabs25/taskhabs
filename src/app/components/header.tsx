@@ -26,7 +26,7 @@ const ROUTE_ITEMS = [
   //{ href: "/reviews", label: "Reviews" },
 ]
 
-const WAITLIST_ID = "hero"
+const WAITLIST_ID = "cta"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
